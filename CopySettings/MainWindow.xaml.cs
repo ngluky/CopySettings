@@ -45,10 +45,10 @@ namespace CopySettings
                 }
                 catch { }
             }
+            if (data == null) return;
             this.Dispatcher.Invoke(() =>
             {
                 var datacontext = this.DataContext as MainWindowViewModel;
-                datacontext.Users = new();
                 foreach (var i in data)
                 {
                     datacontext.Users.Add(i);

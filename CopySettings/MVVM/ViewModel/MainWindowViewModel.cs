@@ -38,6 +38,7 @@ namespace CopySettings.MVVM.ViewModel
 
         public MainWindowViewModel()
         {
+            Users = new ObservableCollection<Account>();
             currView = new SettingUserView();
         }
 
