@@ -1,5 +1,6 @@
 ﻿using CopySettings.Hellp;
 using CopySettings.MVVM.ViewModel;
+using CopySettings.Obje;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
@@ -44,18 +45,30 @@ namespace CopySettings.MVVM.View.Popup
         private async void LogIn(object sender, RoutedEventArgs e)
         {
             Loading.Visibility = Visibility.Visible;
-            var user = await AthLogin.LoginUserPass(User.Text, PasswordBox.Password).ConfigureAwait(false);
-            this.Dispatcher.Invoke(() =>
+            Account? user = await AthLogin.LoginUserPass(User.Text, PasswordBox.Password).ConfigureAwait(false);
+
+            if (user != null)
             {
-                MainWindow Win = GetWindow(LoginPopup) as MainWindow;
-                MainWindowViewModel datacontext = Win.DataContext as MainWindowViewModel;
-                datacontext.Users.Add(user);
-                Win.Popup.Visibility = Visibility.Hidden;
-                Win.PopupUserControl.Content = null;
-                MessageBox.Show("login Complex");
-
-
-            });
+                this.Dispatcher.Invoke(() =>
+                {
+                    MainWindow Win = GetWindow(LoginPopup) as MainWindow;
+                    MainWindowViewModel datacontext = Win.DataContext as MainWindowViewModel;
+                    datacontext.Users.Add(user);
+                    Win.Popup.Visibility = Visibility.Hidden;
+                    Win.PopupUserControl.Content = null;
+                    MessageBox.Show("login Complex");
+                    err.Visibility = Visibility.Hidden;
+                    });
+            }
+            else
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    err.Visibility = Visibility.Visible;
+                    err.Text = "Login fail";
+                    Loading.Visibility = Visibility.Hidden;
+                });
+            }
 
         }
     }

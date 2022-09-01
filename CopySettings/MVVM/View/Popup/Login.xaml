@@ -16,17 +16,19 @@
                 x:Name="User"
                 materialDesign:HintAssist.Hint="UserName">
             </TextBox>
-            <PasswordBox Height="30" Margin="10" Foreground="White" FontSize="17"
+            <PasswordBox Height="30" Margin="10,10,10,0" Foreground="White" FontSize="17"
                x:Name="PasswordBox"
                materialDesign:HintAssist.Hint="Password"
                materialDesign:TextFieldAssist.HasClearButton="True">
             </PasswordBox>
 
+            <TextBlock x:Name="err" HorizontalAlignment="Center" Foreground="DarkRed"/>
+
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Width="70" Height="30" Margin="10,10,10,0" Padding="0" Click="close">
+                <Button Width="70" Height="30" Margin="10,0,10,0" Padding="0" Click="close">
                     Cancel
                 </Button>
-                <Button Width="70" Height="30" Margin="10,10,10,0" Click="LogIn">
+                <Button Width="70" Height="30" Margin="10,0,10,0" Click="LogIn">
                     Login
                 </Button>
             </StackPanel>
