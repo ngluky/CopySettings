@@ -1,0 +1,227 @@
+﻿<Window x:Class="CopySettings.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CopySettings"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Background="#1F1F1F"
+        ResizeMode="CanMinimize"
+        DataContext="{StaticResource MainVM}"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        >
+    <Window.Resources>
+        <Style TargetType="Border" x:Key="Animestion">
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                                 From="0" To="1" Duration="0:0:0.1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                                 From="1" To="0" Duration="0:0:0.1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="ListViewItem" x:Key="listAcc">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <Grid Height="19" Margin="5" VerticalAlignment="Center">
+
+                            <TextBlock FontSize="15" Foreground="White" 
+                                        Text="{Binding DisplayName}"/>
+                       
+                        </Grid>
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!--#region column 2-->
+        <Grid Grid.Column="1">
+            <UserControl Content="{Binding currView}" x:Name="ViewSetting"></UserControl>
+            <Grid Background="#55000000" Opacity="1" Visibility="Hidden" x:Name="Popup">
+                <Border HorizontalAlignment="Center" VerticalAlignment="Center" Background="#340D3E" CornerRadius="5" BorderThickness="1" BorderBrush="Black">
+                    <UserControl x:Name="PopupUserControl"></UserControl>
+                </Border>
+            </Grid>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region column 1-->
+
+        <Border Background="#340D3E">
+            <Border.Effect>
+                <DropShadowEffect RenderingBias="Performance" Direction="360" BlurRadius="13"/>
+            </Border.Effect>
+
+            <Grid>
+                <!--region list button-->
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type CheckBox}">
+                            <Setter Property="Height" Value="30"/>
+                            <Setter Property="Width" Value="30"/>
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                            <Setter Property="Padding" Value="0" />
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Setter Property="Background" Value="#340D3E" />
+                            <Setter Property="BorderBrush" Value="Transparent" />
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                        <Style TargetType="materialDesign:PackIcon">
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Background" Value="#340D3E"/>
+                        </Style>
+                    </StackPanel.Resources>
+
+                    <!--button 1-->
+                    <Grid Height="60">
+                        <CheckBox MouseEnter="Import_MouseEnter" MouseLeave="Import_MouseLeave" Click="ClickImport" Background="#340D3E">
+                            <CheckBox.Template>
+                                <ControlTemplate>
+                                    <Grid>
+                                        <materialDesign:PackIcon Kind="FilePlus" Height="30" Width="30"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                        </CheckBox>
+                        <Border Background="#340D3E" Margin="69,0,-83,0" VerticalAlignment="Center" CornerRadius="5" IsEnabled="False" Opacity="0" Style="{StaticResource Animestion}" Height="22">
+                            <TextBlock Text="File Import" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
+                        </Border>
+                    </Grid>
+
+                    <!--Button3-->
+                    <Grid>
+                        <CheckBox MouseEnter="Import_MouseEnter" MouseLeave="Import_MouseLeave" Click="ClickExport" Background="#340D3E" >
+                            <CheckBox.Template>
+                                <ControlTemplate>
+                                    <Grid>
+                                        <materialDesign:PackIcon Kind="ContentSave" Height="30" Width="30"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                        </CheckBox>
+                        <Border Background="#340D3E" Margin="69,0,-83,0" VerticalAlignment="Center" CornerRadius="5" IsEnabled="False" Opacity="0" Style="{StaticResource Animestion}" Height="22">
+                            <TextBlock Text="Save" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
+                        </Border>
+                    </Grid>
+
+                    <!--button 4-->
+                    <Grid Height="60">
+                        <CheckBox MouseEnter="Import_MouseEnter" MouseLeave="Import_MouseLeave" Click="ClickSetting" Background="#340D3E">
+                            <CheckBox.Template>
+                                <ControlTemplate>
+                                    <Grid>
+                                        <materialDesign:PackIcon Kind="Cog" Height="30" Width="30" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                        </CheckBox>
+                        <Border Background="#340D3E" Margin="69,0,-83,0" VerticalAlignment="Center" CornerRadius="5" IsEnabled="False" Opacity="0" Style="{StaticResource Animestion}" Height="22">
+                            <TextBlock Text="Setting" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
+                        </Border>
+                    </Grid>
+                </StackPanel>
+                <!--endregion-->
+
+                <!--region Acc-->
+
+                <Grid VerticalAlignment="Bottom"
+                      Margin="-2,0,2,7" Height="40">
+                    <CheckBox MouseEnter="Import_MouseEnter" IsChecked="{Binding AccIsCheck}" x:Name="Acc"
+                              MouseLeave="Import_MouseLeave" Padding="0" Height="30" Width="30">
+                        <CheckBox.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Border x:Name="AVT"
+                                        Background="#340D3E"    
+                                        CornerRadius="10" Height="30" Width="30"/>
+                                    <StackPanel>
+                                        <Image Height="30" Width="30" Source="/account.png"/>
+                                        <StackPanel.OpacityMask>
+                                            <VisualBrush Visual="{Binding ElementName=AVT}"/>
+                                        </StackPanel.OpacityMask>
+                                    </StackPanel>
+                                </Grid>
+
+                            </ControlTemplate>
+                        </CheckBox.Template>
+                    </CheckBox>
+
+                    <Border Background="#340D3E" Margin="69,0,-107,0" VerticalAlignment="Center" CornerRadius="5" IsEnabled="False" Opacity="0" Style="{StaticResource Animestion}" Height="22">
+                        <TextBlock Text="NTR ngáo#ACE" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
+                    </Border>
+
+                </Grid>
+
+                <Border Width="169" IsEnabled="{Binding AccIsCheck}" Style="{StaticResource Animestion}" Opacity="1"
+                        HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,-174,7"
+                        Background="#340D3E" CornerRadius="5">
+                    <StackPanel>
+                        <Grid HorizontalAlignment="Stretch" Margin="5">
+                            <TextBlock Text="Local Acc" FontSize="15"/>
+                            <ProgressBar HorizontalAlignment="Right"
+                                  Style="{StaticResource MaterialDesignCircularProgressBar}"
+                                  Value="35"
+                                  Height="13"
+                                  Width="13"
+                                  Margin="10,0,0,0"
+                                  IsIndeterminate="True" />
+                        </Grid>
+
+                        <Border Height="1" Background="white" Margin="10,0,10,0" />
+
+                        <ListView x:Name="ListAcc" ItemsSource="{Binding Users}" ItemContainerStyle="{StaticResource listAcc}">
+
+                        </ListView>
+
+                        <Button Height="19" Opacity="1" Padding="0" Margin="5" Background="#340D3E" BorderBrush="Transparent" Click="Login">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Grid Opacity="1" Background="{TemplateBinding Background}">
+                                        <TextBlock Text="login account" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <materialDesign:PackIcon Kind="Plus" Foreground="White" HorizontalAlignment="Right" Height="15" Width="15" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+                    </StackPanel>
+                </Border>
+
+                <!--endregion-->
+
+            </Grid>
+        </Border>
+        <!--#endregion-->
+
+
+
+
+
+    </Grid>
+</Window>

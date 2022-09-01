@@ -1,0 +1,6 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:VM="clr-namespace:CopySettings.MVVM.ViewModel"
+                    >
+    <VM:MainWindowViewModel x:Key="MainVM"/>
+</ResourceDictionary>

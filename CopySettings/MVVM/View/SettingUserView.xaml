@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="CopySettings.MVVM.View.SettingUserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CopySettings.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:Vm="clr-namespace:CopySettings.MVVM.ViewModel"
+             xmlns:Cv="clr-namespace:CopySettings.Hellp">
+    
+    <UserControl.DataContext>
+        <Vm:SettingUserViewModel/>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <Cv:biningConver x:Key="dataCV"/>
+        <Style TargetType="RadioButton" x:Key="Tap">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid Background="{TemplateBinding Background}" Height="{TemplateBinding Height}"
+                              Width="{Binding Width}">
+
+                            <TextBlock Text="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                       Foreground="White" FontSize="15"/>
+                            <Border Height="1" Background="{TemplateBinding BorderBrush}" VerticalAlignment="Bottom"/>
+                        </Grid>
+
+                    </ControlTemplate>
+                </Setter.Value>
+
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="BorderBrush" Value="DarkGreen"/>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="False">
+                    <Setter Property="BorderBrush" Value="DarkRed"/>
+                </Trigger>
+            </Style.Triggers>
+            
+        </Style>
+        <Style TargetType="ListViewItem" x:Key="floatSettingTheme">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Grid>
+                            <TextBlock Text="{Binding settingEnum , Converter={StaticResource dataCV} , Mode=OneWay}" FontSize="19" Foreground="White"/>
+                            <TextBox HorizontalAlignment="Right" Margin="0,0,30,0" Name="MouseSensitivity" Text="{Binding value}" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="41*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+            <RadioButton Content="Float" Width="90" Background="Transparent" Style="{StaticResource Tap}" IsChecked="True"></RadioButton>
+            <RadioButton Content="Int" Width="90" Background="Transparent" Style="{StaticResource Tap}"></RadioButton>
+            <RadioButton Content="Bool" Width="90" Background="Transparent" Style="{StaticResource Tap}"></RadioButton>
+            <RadioButton Content="String" Width="90" Background="Transparent" Style="{StaticResource Tap}"></RadioButton>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" CanContentScroll="False">
+
+            <StackPanel HorizontalAlignment="Center" Width="500"
+                    >
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontSize" Value="19"/>
+                        <Setter Property="Margin" Value="19"/>
+                    </Style>
+                    <Style TargetType="{x:Type TextBox}">
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="FontSize" Value="19"/>
+                        <Setter Property="Margin" Value="19"/>
+                    </Style>
+                </StackPanel.Resources>
+
+                <ListView ItemsSource="{Binding data.floatSettings}" ItemContainerStyle="{StaticResource floatSettingTheme}"
+                      >
+                </ListView>
+            </StackPanel>
+        </ScrollViewer>
+              
+    </Grid>
+    
+</UserControl>
