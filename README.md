@@ -1,0 +1,3 @@
+# CopySettings
+
+copy and past
