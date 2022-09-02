@@ -7,7 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              xmlns:Vm="clr-namespace:CopySettings.MVVM.ViewModel"
-             xmlns:Cv="clr-namespace:CopySettings.Hellp">
+             xmlns:Cv="clr-namespace:CopySettings.Hellp"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
     
     <UserControl.DataContext>
         <Vm:SettingUserViewModel/>
@@ -46,14 +47,14 @@
                     <ControlTemplate>
                         <Grid>
                             <TextBlock Text="{Binding settingEnum , Converter={StaticResource dataCV} , Mode=OneWay}" FontSize="19" Foreground="White"/>
-                            <TextBox HorizontalAlignment="Right" Margin="0,0,30,0" Name="MouseSensitivity" Text="{Binding value}" VerticalAlignment="Center"/>
+                            <TextBox HorizontalAlignment="Right" Margin="0,0,30,0" Name="MouseSensitivity" Text="{Binding value}" VerticalAlignment="Center" Foreground="White" FontSize="19"/>
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid>
+    <!--<Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
             <RowDefinition Height="41*"/>
@@ -90,6 +91,26 @@
             </StackPanel>
         </ScrollViewer>
               
-    </Grid>
-    
+    </Grid>-->
+
+    <materialDesign:Card Background="Transparent">
+        <TabControl
+            Background="Transparent"
+            materialDesign:ColorZoneAssist.Mode="PrimaryMid"
+            Style="{StaticResource MaterialDesignFilledTabControl}">
+            <TabItem Height="30" Padding="0"
+                Header="Float Setting">
+                <ListView Margin="20,0,0,0" ItemsSource="{Binding data.floatSettings}" ItemContainerStyle="{StaticResource floatSettingTheme}"/>
+            </TabItem>
+            <TabItem Height="30" Padding="0"
+                Header="Int Setting">
+                <ListView Margin="20,0,0,0" ItemsSource="{Binding data.intSettings}" ItemContainerStyle="{StaticResource floatSettingTheme}"/>
+            </TabItem>
+            <TabItem Height="30" Padding="0"
+                Header="Bool Setting">
+                <ListView Margin="20,0,0,0" ItemsSource="{Binding data.boolSettings}" ItemContainerStyle="{StaticResource floatSettingTheme}"/>
+            </TabItem>
+        </TabControl>
+    </materialDesign:Card>
+
 </UserControl>

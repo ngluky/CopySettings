@@ -37,3 +37,4 @@ D:\code\C#_\CopySettings\CopySettings\obj\Debug\net6.0-windows\MVVM\View\Popup\L
 D:\code\C#_\CopySettings\CopySettings\obj\Debug\net6.0-windows\MVVM\View\Popup\Login.baml
 D:\code\C#_\CopySettings\CopySettings\obj\Debug\net6.0-windows\MVVM\View\SettingUserView.g.cs
 D:\code\C#_\CopySettings\CopySettings\obj\Debug\net6.0-windows\MVVM\View\SettingUserView.baml
+D:\code\C#_\CopySettings\CopySettings\obj\Debug\net6.0-windows\CopySettings_Content.g.cs

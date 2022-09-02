@@ -38,7 +38,7 @@ namespace CopySettings.Hellp
             #endregion
             AthJson data = null;
 
-            Account user = new();
+              Account user = new();
 
             foreach (var l in line)
             {
@@ -49,7 +49,7 @@ namespace CopySettings.Hellp
                 }
             }
 
-            if (data.data == null) return null;
+            if (data == null) return null;
             RestClient client = new RestClient("https://auth.riotgames.com/userinfo");
 
             RestRequest request = new();

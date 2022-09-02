@@ -4,19 +4,14 @@ using CopySettings.MVVM.ViewModel;
 using CopySettings.Obje;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
+using System.ComponentModel;
+using System.IO;
+using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CopySettings
 {
@@ -25,42 +20,86 @@ namespace CopySettings
     /// </summary>
     public partial class MainWindow : Window
     {
+        //private static string path = /*System.AppDomain.CurrentDomain.BaseDirectory*/;
+
         public MainWindow()
         {
             InitializeComponent();
+            if (!File.Exists("./Ath/Ath.exe"))
+            {
+                DowAth.Visibility = Visibility.Visible;
+                DowAthFun();
+            }
             init();
-            
         }
 
+        void DowAthFun()
+        {
+            WebClient client = new WebClient();
+            client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(client_DownloadProgressChanged);
+            client.DownloadFileCompleted += new AsyncCompletedEventHandler(client_DownloadFileCompleted);
+            Directory.CreateDirectory(@".\Ath\");
+            Uri url = new Uri("https://download853.mediafire.com/3ab972ghj2sg/er64myqadjz8e38/Ath.exe");
+            string pathfile = $@"{System.AppDomain.CurrentDomain.BaseDirectory}Ath\Ath.exe";
+            client.DownloadFileAsync(url , pathfile , null);
+        }
+
+        void client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            Ps.Text = $"{e.ProgressPercentage} %";
+            Ps1.Value = e.ProgressPercentage;
+            if (e.ProgressPercentage == 100)
+            {
+                DowAth.Visibility = Visibility.Hidden;
+            }
+        }
+
+        void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            DowAth.Visibility = Visibility.Hidden;
+        }
 
         private async Task init()
         {
-            List<Account> data = null;
-            for (int i = 0; i <4; i++) 
-            {
-                try
-                {
-                    data = await AthLogin.LoginCookie("./Ath/Cookie").ConfigureAwait(false);
-                    break;
-                }
-                catch { }
-            }
-            if (data == null) return;
-            this.Dispatcher.Invoke(() =>
-            {
-                var datacontext = this.DataContext as MainWindowViewModel;
-                foreach (var i in data)
-                {
-                    datacontext.Users.Add(i);
-                }
 
-            });
+            async Task getCookie()
+            {
+                List<Account> data = null;
+                for (int i = 0; i < 4; i++)
+                {
+                    try
+                    {
+                        data = await AthLogin.LoginCookie("./Ath/Cookie").ConfigureAwait(false);
+                        break;
+                    }
+                    catch { }
+                }
+                if (data == null) return;
+                this.Dispatcher.Invoke(() =>
+                {
+                    var datacontext = this.DataContext as MainWindowViewModel;
+                    foreach (var i in data)
+                    {
+                        datacontext.Users.Add(i);
+                    }
+                });
+            }
+
+
+            
+
+            
+
+            await Task.WhenAll(
+                getCookie()
+                );
+
         }
 
         private void Import_MouseEnter(object sender, MouseEventArgs e)
         {
             CheckBox? button = sender as CheckBox;
-            
+
             if (button == null) return;
             Grid grid = (Grid)button.Parent;
             var chir = grid.Children[1];
@@ -106,7 +145,7 @@ namespace CopySettings
             Import impotPopup = new Import();
             PopupUserControl.Content = impotPopup;
             Popup.Visibility = Visibility.Visible;
-            
+
         }
 
         private void ClickExport(object sender, RoutedEventArgs e)
