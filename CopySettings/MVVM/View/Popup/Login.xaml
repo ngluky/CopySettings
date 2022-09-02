@@ -45,7 +45,7 @@
         <Button Background="Transparent" Click="close" BorderBrush="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0">
             <Button.Template>
                 <ControlTemplate>
-                    <materialDesign:PackIcon Kind="CloseCircle" Foreground="DarkRed" HorizontalAlignment="Right" Margin="4"/>
+                    <materialDesign:PackIcon Kind="CloseCircle" Foreground="DarkRed" Background="#340D3E" HorizontalAlignment="Right" Margin="4"/>
                 </ControlTemplate>
             </Button.Template>
         </Button>

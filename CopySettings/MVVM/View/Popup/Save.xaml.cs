@@ -79,8 +79,15 @@ namespace CopySettings.MVVM.View.Popup
             MainWindow Win = GetWindow(ExportPopup) as MainWindow;
             var datacontext = Win.DataContext as MainWindowViewModel;
             var data = datacontext.data;
-            Win.Popup.Visibility = Visibility.Hidden;
             Win.PopupUserControl.Content = null;
+
+            if (data == null)
+            {
+                MessageBox.Show("Data is null");
+                return;
+            }
+
+            Win.Popup.Visibility = Visibility.Hidden;
 
             string data_string = JsonConvert.SerializeObject(data);
             if (sfd.ShowDialog() == true)
@@ -103,6 +110,13 @@ namespace CopySettings.MVVM.View.Popup
             var data = datacontext.data;
             Win.Popup.Visibility = Visibility.Hidden;
             Win.PopupUserControl.Content = null;
+
+            if (data == null)
+            {
+                MessageBox.Show("Data is null");
+                return;
+            }
+
             await ApiValorantCline.putUserSettings(user , data).ConfigureAwait(false);
 
             MessageBox.Show("save Complex");

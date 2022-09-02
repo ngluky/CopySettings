@@ -70,29 +70,27 @@ namespace CopySettings
                     try
                     {
                         data = await AthLogin.LoginCookie("./Ath/Cookie").ConfigureAwait(false);
-                        break;
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            var datacontext = this.DataContext as MainWindowViewModel;
+                            foreach (var i in data)
+                            {
+                                datacontext.Users.Add(i);
+                            }
+                        });
+
+                        return;
                     }
                     catch { }
                 }
-                if (data == null) return;
-                this.Dispatcher.Invoke(() =>
-                {
-                    var datacontext = this.DataContext as MainWindowViewModel;
-                    foreach (var i in data)
-                    {
-                        datacontext.Users.Add(i);
-                    }
-                });
             }
 
 
-            
 
-            
 
-            await Task.WhenAll(
-                getCookie()
-                );
+
+
+            await getCookie();
 
         }
 
