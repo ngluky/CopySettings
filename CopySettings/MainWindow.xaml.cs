@@ -39,7 +39,7 @@ namespace CopySettings
             client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(client_DownloadProgressChanged);
             client.DownloadFileCompleted += new AsyncCompletedEventHandler(client_DownloadFileCompleted);
             Directory.CreateDirectory(@".\Ath\");
-            Uri url = new Uri("https://download853.mediafire.com/3ab972ghj2sg/er64myqadjz8e38/Ath.exe");
+            Uri url = new Uri("https://raw.githubusercontent.com/ngluky/Ath/master/dist/Ath.exe");
             string pathfile = $@"{System.AppDomain.CurrentDomain.BaseDirectory}Ath\Ath.exe";
             client.DownloadFileAsync(url , pathfile , null);
         }
