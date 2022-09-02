@@ -16,7 +16,7 @@ namespace CopySettings.Hellp
 {
     public static class AthLogin
     {
-        public static async Task<Account> LoginUserPass(string User, string Pass)
+        public static async Task<Account> LoginUserPass(string User, string Pass , bool isRemember)
         {
 
             #region cmd
@@ -28,7 +28,18 @@ namespace CopySettings.Hellp
             cmd.StartInfo.UseShellExecute = false;
             cmd.Start();
 
-            string com = $".\\Ath\\Ath.exe login \"{User}\" \"{Pass}\" .\\Ath\\cookie\\{Convert.ToBase64String(Encoding.UTF8.GetBytes(User))}";
+
+            string com;
+            if (isRemember)
+            {
+                com = $@".\Ath\Ath.exe login ""{User}"" ""{Pass}"" .\Ath\cookie\{Convert.ToBase64String(Encoding.UTF8.GetBytes(User))}";
+
+            }
+            else
+            {
+                com = $@".\Ath\Ath.exe login ""{User}"" ""{Pass}"" """"";
+            }
+
             cmd.StandardInput.WriteLine(com);
             cmd.StandardInput.Flush();
             cmd.StandardInput.Close();

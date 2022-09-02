@@ -101,19 +101,26 @@
                             <Setter Property="Foreground" Value="White"/>
                             <Setter Property="Background" Value="#340D3E"/>
                         </Style>
+
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                        
                     </StackPanel.Resources>
 
                     <!--button 1-->
                     <Grid Height="60">
-                        <CheckBox MouseEnter="Import_MouseEnter" MouseLeave="Import_MouseLeave" Click="ClickImport" Background="#340D3E">
-                            <CheckBox.Template>
+                        <Button MouseEnter="Import_MouseEnter" MouseLeave="Import_MouseLeave" Click="ClickImport" Background="#340D3E">
+                            <Button.Template>
                                 <ControlTemplate>
                                     <Grid>
                                         <materialDesign:PackIcon Kind="FilePlus" Height="30" Width="30"/>
                                     </Grid>
                                 </ControlTemplate>
-                            </CheckBox.Template>
-                        </CheckBox>
+                            </Button.Template>
+                        </Button>
                         <Border Background="#340D3E" Margin="69,0,-83,0" VerticalAlignment="Center" CornerRadius="5" IsEnabled="False" Opacity="0" Style="{StaticResource Animestion}" Height="22">
                             <TextBlock Text="File Import" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
                         </Border>
@@ -121,15 +128,15 @@
 
                     <!--Button3-->
                     <Grid>
-                        <CheckBox MouseEnter="Import_MouseEnter" MouseLeave="Import_MouseLeave" Click="ClickExport" Background="#340D3E" >
-                            <CheckBox.Template>
+                        <Button MouseEnter="Import_MouseEnter" MouseLeave="Import_MouseLeave" Click="ClickExport" Background="#340D3E" >
+                            <Button.Template>
                                 <ControlTemplate>
                                     <Grid>
                                         <materialDesign:PackIcon Kind="ContentSave" Height="30" Width="30"/>
                                     </Grid>
                                 </ControlTemplate>
-                            </CheckBox.Template>
-                        </CheckBox>
+                            </Button.Template>
+                        </Button>
                         <Border Background="#340D3E" Margin="69,0,-83,0" VerticalAlignment="Center" CornerRadius="5" IsEnabled="False" Opacity="0" Style="{StaticResource Animestion}" Height="22">
                             <TextBlock Text="Save" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
                         </Border>
@@ -137,15 +144,15 @@
 
                     <!--button 4-->
                     <Grid Height="60">
-                        <CheckBox MouseEnter="Import_MouseEnter" MouseLeave="Import_MouseLeave" Click="ClickSetting" Background="#340D3E">
-                            <CheckBox.Template>
+                        <Button MouseEnter="Import_MouseEnter" MouseLeave="Import_MouseLeave" Click="ClickSetting" Background="#340D3E">
+                            <Button.Template>
                                 <ControlTemplate>
                                     <Grid>
                                         <materialDesign:PackIcon Kind="Cog" Height="30" Width="30" />
                                     </Grid>
                                 </ControlTemplate>
-                            </CheckBox.Template>
-                        </CheckBox>
+                            </Button.Template>
+                        </Button>
                         <Border Background="#340D3E" Margin="69,0,-83,0" VerticalAlignment="Center" CornerRadius="5" IsEnabled="False" Opacity="0" Style="{StaticResource Animestion}" Height="22">
                             <TextBlock Text="Setting" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="Bold"/>
                         </Border>

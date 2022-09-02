@@ -45,7 +45,7 @@ namespace CopySettings.MVVM.View.Popup
         private async void LogIn(object sender, RoutedEventArgs e)
         {
             Loading.Visibility = Visibility.Visible;
-            Account? user = await AthLogin.LoginUserPass(User.Text, PasswordBox.Password).ConfigureAwait(false);
+            Account? user = await AthLogin.LoginUserPass(User.Text, PasswordBox.Password , (bool)remember.IsChecked).ConfigureAwait(false);
 
             if (user != null)
             {
@@ -58,6 +58,7 @@ namespace CopySettings.MVVM.View.Popup
                     Win.PopupUserControl.Content = null;
                     MessageBox.Show("login Complex");
                     err.Visibility = Visibility.Hidden;
+                    err.Height = 0;
                     });
             }
             else
@@ -66,6 +67,7 @@ namespace CopySettings.MVVM.View.Popup
                 {
                     err.Visibility = Visibility.Visible;
                     err.Text = "Login fail";
+                    err.Height = 20;
                     Loading.Visibility = Visibility.Hidden;
                 });
             }

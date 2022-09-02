@@ -86,31 +86,23 @@ namespace CopySettings
             }
 
 
-
-
-
-
             await getCookie();
 
         }
 
         private void Import_MouseEnter(object sender, MouseEventArgs e)
         {
-            CheckBox? button = sender as CheckBox;
+            Button? button = sender as Button;
 
             if (button == null) return;
             Grid grid = (Grid)button.Parent;
             var chir = grid.Children[1];
-            if (button.IsChecked == true)
-            {
-                chir.IsEnabled = false; return;
-            }
             chir.IsEnabled = true;
         }
 
         private void Import_MouseLeave(object sender, MouseEventArgs e)
         {
-            CheckBox? button = sender as CheckBox;
+            Button? button = sender as Button;
 
             if (button == null) return;
             Grid grid = (Grid)button.Parent;
