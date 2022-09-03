@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\code\C#_\CopySettings\CopySettings\App.xaml
-7234333671
-1-838403856
-26-1095456458
+8-1630146767
+1-1858580402
+291786933480
 198-1313938257
-MainRes.xaml;MainWindow.xaml;MVVM\View\Popup\Import.xaml;MVVM\View\Popup\Login.xaml;MVVM\View\Popup\Save.xaml;MVVM\View\Popup\Settings.xaml;MVVM\View\SettingUserView.xaml;
+MainRes.xaml;MainWindow.xaml;MVVM\View\Popup\Import.xaml;MVVM\View\Popup\Login.xaml;MVVM\View\Popup\Save.xaml;MVVM\View\Popup\Settings.xaml;MVVM\View\SettingUserView.xaml;MVVM\View\SettingUserViewRes\SwichStyle.xaml;
 
 True
 

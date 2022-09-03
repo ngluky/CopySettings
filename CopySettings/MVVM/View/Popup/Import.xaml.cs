@@ -86,6 +86,7 @@ namespace CopySettings.MVVM.View.Popup
                 MainWindow Win = GetWindow(ImportPopup) as MainWindow;
                 MainWindowViewModel datacontext = Win.DataContext as MainWindowViewModel;
                 datacontext.data = data;
+
                 Win.Popup.Visibility = Visibility.Hidden;
                 Win.PopupUserControl.Content = null;
 
@@ -99,13 +100,12 @@ namespace CopySettings.MVVM.View.Popup
             }
         }
 
-
+        //get data user
         private async void ListAcc_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Loading.Visibility = Visibility.Visible;
             var gird = sender as Grid;
-
-            var user = gird.DataContext as Account;
+            var user = gird.DataContext as Account; // get account
 
             var data = await ApiValorantCline.FetchUserSettings(user).ConfigureAwait(false);
 

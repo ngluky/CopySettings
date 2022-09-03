@@ -78,7 +78,9 @@ namespace CopySettings.MVVM.View.Popup
 
             MainWindow Win = GetWindow(ExportPopup) as MainWindow;
             var datacontext = Win.DataContext as MainWindowViewModel;
-            var data = datacontext.data;
+            var viewsetting = Win.ViewSetting.Content as SettingUserView;
+            var datacontext_ = viewsetting.DataContext as SettingUserViewModel;
+            var data = datacontext_.GetData();
             Win.PopupUserControl.Content = null;
 
             if (data == null)
@@ -99,6 +101,7 @@ namespace CopySettings.MVVM.View.Popup
 
         }
 
+        //save setting to user account
         private async void ListAcc_MouseDown(object sender, MouseButtonEventArgs e)
         {
             var gird = sender as Grid;
@@ -107,7 +110,11 @@ namespace CopySettings.MVVM.View.Popup
 
             MainWindow Win = GetWindow(ExportPopup) as MainWindow;
             var datacontext = Win.DataContext as MainWindowViewModel;
-            var data = datacontext.data;
+
+            var viewsetting = Win.ViewSetting.Content as SettingUserView;
+            var datacontext_ = viewsetting.DataContext as SettingUserViewModel;
+            var data = datacontext_.GetData();
+
             Win.Popup.Visibility = Visibility.Hidden;
             Win.PopupUserControl.Content = null;
 

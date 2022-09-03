@@ -42,6 +42,7 @@ namespace CopySettings.MVVM.View.Popup
             return par;
         }
 
+
         private async void LogIn(object sender, RoutedEventArgs e)
         {
             Loading.Visibility = Visibility.Visible;

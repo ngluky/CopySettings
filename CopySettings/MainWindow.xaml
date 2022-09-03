@@ -64,9 +64,10 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <!--#region column 2-->
-        <Grid Grid.Column="1">
-            <UserControl Content="{Binding currView}" x:Name="ViewSetting"></UserControl>
+        <!--#region Grid column 2-->
+        <Grid Grid.Column="1" MouseDown="close_Popup" Background="#1F1F1F">
+            <UserControl Content="{Binding currView}" x:Name="ViewSetting" MouseDown="close_Popup" Margin="1,0,0,0"/>
+            <!--popup-->
             <Grid Background="#55000000" Opacity="1" Visibility="Hidden" x:Name="Popup">
                 <Border HorizontalAlignment="Center" VerticalAlignment="Center" Background="#340D3E" CornerRadius="5" BorderThickness="1" BorderBrush="Black">
                     <UserControl x:Name="PopupUserControl"></UserControl>
@@ -77,7 +78,7 @@
 
         <!--#region column 1-->
 
-        <Border Background="#340D3E">
+        <Border Background="#340D3E" MouseDown="close_Popup">
             <Border.Effect>
                 <DropShadowEffect RenderingBias="Performance" Direction="360" BlurRadius="13"/>
             </Border.Effect>
@@ -173,7 +174,7 @@
                                         Background="#340D3E"    
                                         CornerRadius="10" Height="30" Width="30"/>
                                     <StackPanel>
-                                        <Image Height="30" Width="30" Source="/account.png"/>
+                                        <Image Height="30" Width="30" Source="/Img/account.png"/>
                                         <StackPanel.OpacityMask>
                                             <VisualBrush Visual="{Binding ElementName=AVT}"/>
                                         </StackPanel.OpacityMask>

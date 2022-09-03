@@ -39,5 +39,8 @@
     <Page Update="MVVM\View\SettingUserView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="MVVM\View\SettingUserViewRes\SwichStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 </Project>

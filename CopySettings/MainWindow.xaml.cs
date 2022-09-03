@@ -25,11 +25,13 @@ namespace CopySettings
         public MainWindow()
         {
             InitializeComponent();
+
             if (!File.Exists("./Ath/Ath.exe"))
             {
                 DowAth.Visibility = Visibility.Visible;
                 DowAthFun();
             }
+            // remeber user
             init();
         }
 
@@ -110,26 +112,31 @@ namespace CopySettings
             chir.IsEnabled = false;
         }
 
-        private void Border_MouseEnter(object sender, MouseEventArgs e)
-        {
-            Border? button = sender as Border;
+        #region not use
 
-            if (button == null) return;
-            Grid grid = (Grid)button.Parent;
-            var chir = grid.Children[1];
-            chir.IsEnabled = true;
-        }
+        //private void Border_MouseEnter(object sender, MouseEventArgs e)
+        //{
+        //    Border? button = sender as Border;
 
-        private void Border_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Border? button = sender as Border;
+        //    if (button == null) return;
+        //    Grid grid = (Grid)button.Parent;
+        //    var chir = grid.Children[1];
+        //    chir.IsEnabled = true;
+        //}
 
-            if (button == null) return;
-            Grid grid = (Grid)button.Parent;
-            var chir = grid.Children[1];
-            chir.IsEnabled = false;
-        }
+        //private void Border_MouseLeave(object sender, MouseEventArgs e)
+        //{
+        //    Border? button = sender as Border;
 
+        //    if (button == null) return;
+        //    Grid grid = (Grid)button.Parent;
+        //    var chir = grid.Children[1];
+        //    chir.IsEnabled = false;
+        //}
+
+        #endregion
+
+        #region show popup
         private void ClickImport(object sender, RoutedEventArgs e)
         {
             Import impotPopup = new Import();
@@ -153,8 +160,6 @@ namespace CopySettings
 
         }
 
-
-
         private void Login(object sender, RoutedEventArgs e)
         {
             Acc.IsChecked = false;
@@ -163,5 +168,19 @@ namespace CopySettings
             Popup.Visibility = Visibility.Visible;
 
         }
+
+        #endregion
+
+        #region close
+        private void close_Popup(object sender, MouseButtonEventArgs e)
+        {
+            PopupUserControl.Content = null;
+            Popup.Visibility = Visibility.Hidden;
+            var data = DataContext as MainWindowViewModel;
+            data.AccIsCheck = false;
+        }
+
+        #endregion
+
     }
 }

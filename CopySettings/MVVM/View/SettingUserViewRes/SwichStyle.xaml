@@ -1,0 +1,84 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                    xmlns:Cv="clr-namespace:CopySettings.Hellp"
+                    >
+
+    <Cv:biningConver x:Key="dataCV"/>
+    <Cv:RoundConvert x:Key="RoundCV"/>
+    <Cv:WidthHalf x:Key="widthHalfCV"/>
+    <Cv:SwichConten x:Key="SwichContenCV"/>
+
+    <Style TargetType="{x:Type Border}" x:Key="Spa">
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Width"
+                                             From="125"
+                                             To="0" Duration="0:0:0.05"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Width"
+                                             To="125"
+                                             From="0" Duration="0:0:0.05"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="CheckBox" x:Key="switchStype">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid Background="{TemplateBinding Background}" Width="{TemplateBinding Width}" Name="colu1"
+                          DataContext="{TemplateBinding Content, Converter={StaticResource SwichContenCV}}">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Border Background="#33FFFFFF" BorderBrush="Transparent" BorderThickness="3">
+                            <TextBlock Text="{Binding Path=[0]}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+
+                        <Border Background="#33FFFFFF" Grid.Column="1" BorderBrush="Transparent" BorderThickness="3">
+                            <TextBlock Text="{Binding Path=[1]}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+
+                        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
+                            <Border Name="spa" Style="{StaticResource Spa}" Width="125" />
+                            <Border HorizontalAlignment="Left" Background="LightGray" BorderBrush="#33000000" BorderThickness="3" Width="{Binding ElementName=colu1 , Converter={StaticResource widthHalfCV}}">
+                                <TextBlock Text="{Binding Path=[0]}" HorizontalAlignment="Center" VerticalAlignment="Center" Name="BorderL" />
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="IsEnabled" Value="True" TargetName="spa" />
+                            <Setter Property="Text" TargetName="BorderL" Value="{Binding Path=[0]}" />
+                        </Trigger>
+
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="IsEnabled" Value="False" TargetName="spa" />
+                            <Setter Property="Text" TargetName="BorderL" Value="{Binding Path=[1]}" />
+
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

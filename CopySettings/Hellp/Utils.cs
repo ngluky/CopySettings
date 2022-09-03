@@ -89,6 +89,10 @@ namespace CopySettings.Hellp
         public static Data ConvertDirectorytoData(DataObj data)
         {
             var dataOutput = new Data();
+            dataOutput.boolSettings = new();
+            dataOutput.intSettings = new();
+            dataOutput.floatSettings = new();
+            dataOutput.stringSettings = new();
             dataOutput.actionMappings = data.actionMappings;
             dataOutput.axisMappings = data.axisMappings;
 

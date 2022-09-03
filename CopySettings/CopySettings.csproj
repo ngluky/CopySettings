@@ -5,15 +5,15 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>application_icon_149973.ico</ApplicationIcon>
+    <ApplicationIcon>Img\application_icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="account.png" />
+    <None Remove="Img\account.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="application_icon_149973.ico" />
+    <Content Include="Img\application_icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="account.png" />
+    <Resource Include="Img\account.png" />
   </ItemGroup>
 
   <ItemGroup>

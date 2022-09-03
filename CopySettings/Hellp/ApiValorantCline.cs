@@ -9,10 +9,14 @@ using System.Windows.Markup;
 using Newtonsoft.Json;
 
 
+
+
+
 namespace CopySettings.Hellp
 {
     public class ApiValorantCline
     {
+
         public async Task<string> GetPlayerCard(Account user)
         {
             var client = new RestClient($"https://pd.{user.Region}.a.pvp.net/store/v1/entitlements/{user.Ppuuid}/3f296c07-64c3-494c-923b-fe692a4fa1bd");
