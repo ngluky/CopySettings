@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              x:Name="SettingPopup">
-    <Grid Width="200" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid Width="250" HorizontalAlignment="Center" VerticalAlignment="Center">
         <Button Background="Transparent" Click="close" BorderBrush="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0">
             <Button.Template>
                 <ControlTemplate>
@@ -16,8 +16,25 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        
-        
+
+        <Grid Margin="15">
+            <StackPanel>
+                <Grid Height="30">
+                    <TextBlock Text="File Gui" FontSize="15" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                    <TextBlock Text="" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="DarkGray" Margin="0,0,20,0"/>
+
+                    <Button Background="Transparent" BorderBrush="Transparent" Height="15" Width="15" Padding="0" HorizontalAlignment="Right" Click="opendFile">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <materialDesign:PackIcon Kind="DotsHorizontal" VerticalAlignment="Center" VerticalContentAlignment="Center" Background="#340D3E"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                </Grid>
+            </StackPanel>
+        </Grid>
         
     </Grid>
 </UserControl>

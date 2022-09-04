@@ -17,11 +17,65 @@ namespace CopySettings.Hellp
 {
     public static class Render
     {
-
-        public static async Task<Border> BoolSetting(object sender, Item i)
+        private static async Task<Border> IntSettingList(object sender, Item i)
         {
             var settinview = sender as SettingUserView;
-            var datacontext = settinview.DataContext as SettingUserViewModel;
+            Border border = new Border();
+            border.Margin = new Thickness(30, 0, 0, 0);
+            border.HorizontalAlignment = HorizontalAlignment.Stretch;
+            border.Height = 43;
+            Binding binding_datacontext = new Binding("intSettings");
+            border.SetBinding(Border.DataContextProperty, binding_datacontext);
+
+            Grid grid = new Grid();
+            #region child gir
+            TextBlock textblock = new TextBlock();
+            #region textblock parameter
+            textblock.Text = i.Name;
+            textblock.Foreground = new SolidColorBrush(Colors.White);
+            textblock.FontSize = 15;
+            textblock.VerticalAlignment = VerticalAlignment.Center;
+            grid.Children.Add(textblock);
+            #endregion
+
+            ComboBox comboBox = new ComboBox();
+            Binding bindingItemIndex = new Binding(i.path);
+            //bindingItemIndex.Converter = new DefaultValue();
+            //bindingItemIndex.ConverterParameter = 2;
+
+            comboBox.Style = (Style)settinview.Resources["Combox"];
+            string[] itmesor = i.TextSwich.Split("|");
+            comboBox.ItemsSource = itmesor;
+            comboBox.SelectedItem = itmesor[2];
+            comboBox.SetBinding(ComboBox.SelectedIndexProperty, bindingItemIndex);
+            comboBox.Height = 30;
+            comboBox.VerticalAlignment = VerticalAlignment.Center;
+            comboBox.HorizontalAlignment = HorizontalAlignment.Right;
+            comboBox.Foreground = new SolidColorBrush(Colors.White);
+            comboBox.Width = 250;
+            comboBox.Margin = new Thickness(0, 0, 15, 0);
+            grid.Children.Add(comboBox);
+
+
+
+            Border border1 = new Border();
+            #region border1 parameter
+            border1.Height = 1;
+            border1.Background = new SolidColorBrush(Colors.DarkGray);
+            border1.VerticalAlignment = VerticalAlignment.Bottom;
+            border1.Margin = new Thickness(10, 0, 20, 0);
+            grid.Children.Add(border1);
+            #endregion
+
+            #endregion
+
+            border.Child = grid;
+            return border;
+        }
+
+        private static async Task<Border> BoolSetting(object sender, Item i)
+        {
+            var settinview = sender as SettingUserView;
             Border border = new Border();
             border.Margin = new Thickness(30, 0, 0, 0);
             border.HorizontalAlignment = HorizontalAlignment.Stretch;
@@ -74,7 +128,7 @@ namespace CopySettings.Hellp
 
         }
 
-        public static async Task<Border> FloatSetting(object sender, Item i)
+        private static async Task<Border> FloatSetting(object sender, Item i)
         {
             var settinview = sender as SettingUserView;
             Border border = new Border();
@@ -110,7 +164,7 @@ namespace CopySettings.Hellp
             textBox.BorderThickness = new Thickness(0, 0, 0, 1);
             textBox.MinWidth = 5;
             Binding binding_text = new Binding(i.path);
-            binding_text.UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged;
+            binding_text.UpdateSourceTrigger = UpdateSourceTrigger.LostFocus;
             textBox.SetBinding(TextBox.TextProperty, binding_text);
             textBox.Name = i.Name.Replace(' ', '_').Replace(":", String.Empty);
             textBox.Style = new Style();
@@ -126,6 +180,7 @@ namespace CopySettings.Hellp
             slider.Style = (Style)settinview.Resources["AppSliderStyle"];
             slider.HorizontalAlignment = HorizontalAlignment.Right;
             slider.Width = 250;
+            slider.Value = 0;
             slider.Margin = new Thickness(0, 0, 15, 0);
             grid.Children.Add(slider);
 
@@ -145,12 +200,13 @@ namespace CopySettings.Hellp
 
         }
 
-        public static void TexBlockChange(object sender, TextChangedEventArgs e)
+        private static void TexBlockChange(object sender, TextChangedEventArgs e)
         {
 
             FrameworkElement framework = sender as FrameworkElement;
             TextBox textBox = sender as TextBox;
             if (textBox.Text == "") return;
+            if (textBox.Text.EndsWith('.')) return;
             //MessageBox.Show(typeof(TextBox).ToString());
             Grid grid = framework.Parent as Grid;
             double value;
@@ -175,7 +231,7 @@ namespace CopySettings.Hellp
             }
         }
 
-        public static void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private static void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             FrameworkElement framework = sender as FrameworkElement;
             Slider slider = sender as Slider;
@@ -197,16 +253,21 @@ namespace CopySettings.Hellp
             }
         }
 
-        public static async Task<Border> RenderItem(object sender , Item i)
+        private static async Task<Border> RenderItem(object sender , Item i)
         {
             if (i.Type == "Float")
             {
                 Border border = await FloatSetting(sender, i);
                 return border;
             }
-            if (i.Type == "Bool")
+            else if (i.Type == "Bool")
             {
                 Border border = await BoolSetting(sender, i);
+                return border;
+            }
+            else if (i.Type == "IntList")
+            {
+                Border border = await IntSettingList(sender, i);
                 return border;
             }
             return null;

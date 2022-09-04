@@ -56,8 +56,8 @@ namespace CopySettings.Hellp
         public static DataObj ConvertDataToDirectory(Data data)
         {
             var dataOutput = new DataObj();
-            dataOutput.actionMappings = data.actionMappings;
             dataOutput.axisMappings = data.axisMappings;
+            dataOutput.actionMappings = new();
             foreach (var i in data.boolSettings)
             {
                 dataOutput.boolSettings.Add(i.settingEnum.Replace("EAresBoolSettingName::" , string.Empty), i.value);
@@ -78,6 +78,21 @@ namespace CopySettings.Hellp
                 dataOutput.stringSettings.Add(i.settingEnum.Replace("EAresStringSettingName::", string.Empty), i.value);
             }
 
+            foreach (var i in data.actionMappings)
+            {
+                if (!dataOutput.actionMappings.ContainsKey(i.characterName))
+                {
+                    dataOutput.actionMappings.Add(i.characterName, new List<Actionmapping>());
+                    dataOutput.actionMappings[i.characterName].Add(i);
+
+                }
+
+                else
+                {
+                    dataOutput.actionMappings[i.characterName].Add(i);
+                }
+            }
+
             dataOutput.roamingSetttingsVersion = data.roamingSetttingsVersion;
 
             dataOutput.settingsProfiles = data.settingsProfiles;
@@ -93,7 +108,7 @@ namespace CopySettings.Hellp
             dataOutput.intSettings = new();
             dataOutput.floatSettings = new();
             dataOutput.stringSettings = new();
-            dataOutput.actionMappings = data.actionMappings;
+            dataOutput.actionMappings = new();
             dataOutput.axisMappings = data.axisMappings;
 
             foreach (var i in data.boolSettings)
@@ -115,6 +130,15 @@ namespace CopySettings.Hellp
             {
                 dataOutput.stringSettings.Add(new Stringsetting() { settingEnum = "EAresStringSettingName::" + i.Key, value = i.Value });
             }
+
+            foreach (var i in data.actionMappings)
+            {
+                foreach (var j in i.Value)
+                {
+                    dataOutput.actionMappings.Add(j);
+                }
+            }
+            //foreach (var i in data)
 
             dataOutput.roamingSetttingsVersion = data.roamingSetttingsVersion;
 

@@ -9,7 +9,7 @@ namespace CopySettings.Obje
         public partial class Actionmapping
         {
             public bool alt { get; set; }
-            public int bindIndex { get; set; }
+            public byte bindIndex { get; set; }
             public string characterName { get; set; }
             public bool cmd { get; set; }
             public bool ctrl { get; set; }

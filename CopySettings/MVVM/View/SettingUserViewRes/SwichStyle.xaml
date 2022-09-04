@@ -4,10 +4,49 @@
                     xmlns:Cv="clr-namespace:CopySettings.Hellp"
                     >
 
-    <Cv:biningConver x:Key="dataCV"/>
     <Cv:RoundConvert x:Key="RoundCV"/>
     <Cv:WidthHalf x:Key="widthHalfCV"/>
     <Cv:SwichConten x:Key="SwichContenCV"/>
+    <Cv:AgentsName x:Key="AgentsNameCV"/>
+
+    <Style x:Key="SliderThumbStyle" TargetType="Thumb">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="false" />
+        <Setter Property="Height" Value="18" />
+        <Setter Property="Width" Value="18" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Ellipse Stroke="Black" StrokeThickness="1" Height="10" Width="10" Name="Ellipse" Fill="LightGray" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="RadioButton" x:Key="Tap">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Grid Background="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{Binding Width}">
+
+                        <TextBlock Text="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="15" />
+                        <Border Height="1" Background="{TemplateBinding BorderBrush}" VerticalAlignment="Bottom" />
+                    </Grid>
+
+                </ControlTemplate>
+            </Setter.Value>
+
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="BorderBrush" Value="DarkGreen" />
+            </Trigger>
+            <Trigger Property="IsChecked" Value="False">
+                <Setter Property="BorderBrush" Value="DarkRed" />
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
 
     <Style TargetType="{x:Type Border}" x:Key="Spa">
         <Style.Triggers>

@@ -9,9 +9,9 @@ namespace CopySettings.Obje.GuiObj
 {
     public class Group
     {
-        [JsonPropertyName("Name")] public string Name { get; set; }
+        [JsonPropertyName("name")] public string Name { get; set; }
 
-        [JsonPropertyName("Items")] public Item[] Items { get; set; }
+        [JsonPropertyName("items")] public Item[] Items { get; set; }
 
     }
 }

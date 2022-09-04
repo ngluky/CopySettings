@@ -124,6 +124,7 @@ namespace CopySettings.Hellp
 
                             RestRequest request = new();
                             if (data == null) return null;
+                            if (data.data == null) return null;
                             foreach (var kv in data.data)
                             {
                                 request.AddHeader(kv.Key, kv.Value);

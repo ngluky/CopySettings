@@ -9,12 +9,11 @@ namespace CopySettings.Obje.GuiObj
 {
     public class Item       
     {
-        [JsonPropertyName("Name")] public string Name { get; set; }
-        [JsonPropertyName("Path")] public string path { get; set; }
-
-        [JsonPropertyName("Type")] public string Type { get; set; }
-        [JsonPropertyName("Minimum")] public int Minimum { get; set; }
-        [JsonPropertyName("Maximum")] public int Maximum { get; set; }
+        [JsonPropertyName("name")] public string Name { get; set; }
+        [JsonPropertyName("path")] public string path { get; set; }
+        [JsonPropertyName("type")] public string Type { get; set; }
+        [JsonPropertyName("minimum")] public double Minimum { get; set; }
+        [JsonPropertyName("maximum")] public double Maximum { get; set; }
         [JsonPropertyName("textSwich")] public string TextSwich { get; set; }
 
 

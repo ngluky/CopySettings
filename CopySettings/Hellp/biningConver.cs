@@ -27,7 +27,40 @@ namespace CopySettings.Hellp
         }
     }
 
-    
+
+    public class AgentsName : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            string? developerName = value as string;
+            if (developerName == null || developerName == "") return "";
+            return Constants.NameAgents[developerName];
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            string? displayName = value as string;
+            if (displayName == null) return "";
+            string developerName = Constants.NameAgents.FirstOrDefault(x => x.Value == displayName).Key;
+            return displayName;
+        }
+    }
+
+    public class DefaultValue : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value == null) return parameter;
+            return value;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return value;
+        }
+    }
+
+
 
     public class RoundConvert : IValueConverter
     {
