@@ -50,6 +50,13 @@ namespace CopySettings.MVVM.View.Popup
         private void opendFile(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "json files (*.json)|*.json";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                if (openFileDialog.FileName == null) return;
+                MainWindow Win = GetWindow(SettingPopup) as MainWindow;
+                Win.SetGuiFile(openFileDialog.FileName);
+            }
         }
     }
 }

@@ -23,7 +23,7 @@ namespace CopySettings.MVVM.View
             InitializeComponent();
             this.KeyDown += SettingUserView_KeyDown;
             this.MouseDown += SettingUserView_MouseDown;
-            var task = RenderGuiGENERAL();
+            var task = RenderGuiGENERAL(@"Gui\Gui.json");
             task.Wait();
         }
 
@@ -38,16 +38,12 @@ namespace CopySettings.MVVM.View
             GetTextBoxFocused(e.Key.ToString());
         }
 
-
-
-
-
-        private async Task RenderGuiGENERAL()
+        public async Task RenderGuiGENERAL(string path)
         {
-            string alltext = File.ReadAllText(@"Gui\Gui.json");
+            string alltext = File.ReadAllText(path);
             Gui data = JsonConvert.DeserializeObject<Gui>(alltext);
             //MessageBox.Show("ok");
-
+            GENERAL.Children.Clear();
             foreach (var i in data.general)
             {
                 StackPanel stackPanel = await Render.RenderGroup(this,i).ConfigureAwait(false);

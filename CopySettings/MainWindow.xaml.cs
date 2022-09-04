@@ -112,6 +112,12 @@ namespace CopySettings
             chir.IsEnabled = false;
         }
 
+        public void SetGuiFile(string Path)
+        {
+            MainWindowViewModel mainWindowViewModel = this.DataContext as MainWindowViewModel;
+            mainWindowViewModel.SetGuiFile(Path);
+        }
+
         #region not use
 
         //private void Border_MouseEnter(object sender, MouseEventArgs e)
