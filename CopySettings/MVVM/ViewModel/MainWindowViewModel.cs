@@ -1,4 +1,5 @@
-﻿using CopySettings.MVVM.View;
+﻿using CopySettings.Hellp;
+using CopySettings.MVVM.View;
 using CopySettings.Obje;
 using System;
 using System.Collections.Generic;
@@ -20,17 +21,30 @@ namespace CopySettings.MVVM.ViewModel
         private ObservableCollection<Account> _Users;
         public ObservableCollection<Account> Users { get => _Users; set { _Users = value; OnPropertyChanged(); } }
 
-        private Data _data;
+        private DataObj _data;
+        public DataObj data { get => _data; set { _data = value; OnPropertyChanged(); } }
 
-        public Data data
+        public List<Actionmapping> KeyBind { get; set; }
+
+        public void SetData(Data data_)
         {
-            get { return _data; }
-            set { _data = value; OnPropertyChanged(); }
+            data = Utils.ConvertDataToDirectory(data_);
+            //MessageBox.Show("ok");
         }
 
+        public Data GetData()
+        {
+            try
+            {
+                return Utils.ConvertDirectorytoData(data);
 
-        private object _currView;
-        public object currView { get => _currView; set{ _currView = value; OnPropertyChanged(); } }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
 
         #endregion
 
@@ -39,13 +53,10 @@ namespace CopySettings.MVVM.ViewModel
         public MainWindowViewModel()
         {
             Users = new ObservableCollection<Account>();
-            currView = new SettingUserView();
         }
 
         public void SetGuiFile(string Path)
         {
-            //SettingUserView settingUser = currView as SettingUserView;
-            //settingUser.RenderGuiGENERAL(Path);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace CopySettings.Hellp
     {
         private static async Task<Border> IntSettingList(object sender, Item i)
         {
-            var settinview = sender as SettingUserView;
+            var settinview = sender as MainWindow;
             Border border = new Border();
             border.Margin = new Thickness(30, 0, 0, 0);
             border.HorizontalAlignment = HorizontalAlignment.Stretch;
@@ -75,7 +75,7 @@ namespace CopySettings.Hellp
 
         private static async Task<Border> BoolSetting(object sender, Item i)
         {
-            var settinview = sender as SettingUserView;
+            var settinview = sender as MainWindow;
             Border border = new Border();
             border.Margin = new Thickness(30, 0, 0, 0);
             border.HorizontalAlignment = HorizontalAlignment.Stretch;
@@ -130,7 +130,7 @@ namespace CopySettings.Hellp
 
         private static async Task<Border> FloatSetting(object sender, Item i)
         {
-            var settinview = sender as SettingUserView;
+            var settinview = sender as MainWindow;
             Border border = new Border();
             border.Margin = new Thickness(30, 0, 0, 0);
             border.HorizontalAlignment = HorizontalAlignment.Stretch;

@@ -78,9 +78,7 @@ namespace CopySettings.MVVM.View.Popup
 
             MainWindow Win = GetWindow(ExportPopup) as MainWindow;
             var datacontext = Win.DataContext as MainWindowViewModel;
-            var viewsetting = Win.ViewSetting as SettingUserView;
-            var datacontext_ = viewsetting.DataContext as SettingUserViewModel;
-            var data = datacontext_.GetData();
+            var data = datacontext.GetData();
             if (data == null)
             {
                 MessageBox.Show("Dont have Data");
@@ -115,10 +113,7 @@ namespace CopySettings.MVVM.View.Popup
 
             MainWindow Win = GetWindow(ExportPopup) as MainWindow;
             var datacontext = Win.DataContext as MainWindowViewModel;
-
-            var viewsetting = Win.ViewSetting as SettingUserView;
-            var datacontext_ = viewsetting.DataContext as SettingUserViewModel;
-            var data = datacontext_.GetData();
+            var data = datacontext.GetData();
             if (data == null)
             {
                 MessageBox.Show("Dont have Data");

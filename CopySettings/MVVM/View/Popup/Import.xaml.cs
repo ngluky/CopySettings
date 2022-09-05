@@ -85,15 +85,10 @@ namespace CopySettings.MVVM.View.Popup
                 var data = JsonConvert.DeserializeObject<Data>(dataString);
                 MainWindow Win = GetWindow(ImportPopup) as MainWindow;
                 MainWindowViewModel datacontext = Win.DataContext as MainWindowViewModel;
-                datacontext.data = data;
+                datacontext.SetData(data);
 
                 Win.Popup.Visibility = Visibility.Hidden;
                 Win.PopupUserControl.Content = null;
-
-                var viewsetting = Win.ViewSetting as SettingUserView;
-
-                var datacontext_ = viewsetting.DataContext as SettingUserViewModel;
-                datacontext_.SetData(data);
 
                 MessageBox.Show("import Complex");
 
@@ -113,14 +108,9 @@ namespace CopySettings.MVVM.View.Popup
             {
                 MainWindow Win = GetWindow(ImportPopup) as MainWindow;
                 MainWindowViewModel datacontext = Win.DataContext as MainWindowViewModel;
-                datacontext.data=data;
+                datacontext.SetData(data);
                 Win.Popup.Visibility = Visibility.Hidden;
                 Win.PopupUserControl.Content = null;
-
-                var viewsetting = Win.ViewSetting as SettingUserView;
-
-                var datacontext_ = viewsetting.DataContext as SettingUserViewModel;
-                datacontext_.SetData(data);
 
                 MessageBox.Show("import Complex");
             });

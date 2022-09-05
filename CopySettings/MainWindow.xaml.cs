@@ -2,6 +2,8 @@
 using CopySettings.MVVM.View.Popup;
 using CopySettings.MVVM.ViewModel;
 using CopySettings.Obje;
+using CopySettings.Obje.GuiObj;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,6 +40,7 @@ namespace CopySettings
             // remeber user
             init();
         }
+
 
         void DowAthFun()
         {
@@ -93,7 +96,7 @@ namespace CopySettings
                 }
             }
 
-
+            await RenderGuiGENERAL(@"Gui\Gui.json");
             await getCookie();
 
         }
@@ -199,9 +202,89 @@ namespace CopySettings
 
         }
 
-        private void SetKey(object sender, MouseButtonEventArgs e)
+
+        private void SettingUserView_KeyDown(object sender, KeyEventArgs e)
         {
-            MessageBox.Show(e.ToString());
+            GetTextBoxFocused(e.Key.ToString());
+        }
+
+        private void SettingUserView_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            GetTextBoxFocused(e.ChangedButton.ToString());
+        }
+
+        public async Task RenderGuiGENERAL(string path)
+        {
+            string alltext = File.ReadAllText(path);
+            Gui data = JsonConvert.DeserializeObject<Gui>(alltext);
+            //MessageBox.Show("ok");
+            if (data.general == null)
+            {
+                MessageBox.Show("Loading Gui Fail");
+                return;
+            }
+            GENERAL.Children.Clear();
+            foreach (var i in data.general)
+            {
+                StackPanel stackPanel = await Render.RenderGroup(this, i).ConfigureAwait(false);
+                GENERAL.Children.Add(stackPanel);
+            }
+
+            foreach (var i in data.control)
+            {
+
+            }
+
+        }
+
+        private void GetTextBoxFocused(string text)
+        {
+
+            foreach (var i in CONTROL.Children)
+            {
+                StackPanel stackPanel = i as StackPanel;
+                foreach (var j in stackPanel.Children)
+                {
+                    if (j.GetType() == typeof(Border))
+                    {
+                        var textbox = GetTexts(j as Border);
+                        if (textbox == null) continue;
+                        textbox.Text = text;
+                    }
+                }
+            }
+
+        }
+
+        private TextBox GetTexts(Border b)
+        {
+            Grid grid = b.Child as Grid;
+            Grid grid1 = grid.Children[1] as Grid;
+            foreach (var i in grid1.Children)
+            {
+                TextBox textBox = i as TextBox;
+                if (textBox.IsFocused)
+                {
+                    return textBox;
+                }
+            }
+
+            return null;
+        }
+
+
+        private void SetProfiles(object sender, RoutedEventArgs e)
+        {
+            SettingUserViewModel datacontext = this.DataContext as SettingUserViewModel;
+            if (datacontext.data.actionMappings.ContainsKey("None"))
+            {
+                datacontext.KeyBind = datacontext.data.actionMappings["None"];
+            }
+        }
+
+        private void test(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("");
         }
     }
 }
