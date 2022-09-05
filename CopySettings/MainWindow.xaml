@@ -10,6 +10,8 @@
         DataContext="{StaticResource MainVM}"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Setting Management"
+        xmlns:View="clr-namespace:CopySettings.MVVM.View"
+
         >
     <Window.Resources>
         <!--appear, diappear popup-->
@@ -65,11 +67,13 @@
         </Grid.ColumnDefinitions>
 
         <!--#region Grid column 2-->
-        <Grid Grid.Column="1" MouseDown="close_Popup" Background="#1F1F1F">
-            <UserControl Content="{Binding currView}" x:Name="ViewSetting" MouseDown="close_Popup" Margin="1,0,0,0"/>
+        <Grid Grid.Column="1" Background="#1F1F1F">
+            <!--<UserControl Content="{Binding currView}" x:Name="ViewSetting" MouseDown="notho" Margin="1,0,0,0"/>-->
+            <View:SettingUserView x:Name="ViewSetting" Margin="1,0,0,0"/>
             <!--popup-->
-            <Grid Background="#55000000" Opacity="1" Visibility="Hidden" x:Name="Popup">
-                <Border HorizontalAlignment="Center" VerticalAlignment="Center" Background="#340D3E" CornerRadius="5" BorderThickness="1" BorderBrush="Black">
+            <Grid Visibility="Hidden" x:Name="Popup">
+                <Border Background="#55000000" MouseDown="close_Popup"/>
+                <Border HorizontalAlignment="Center" MouseDown="notho" VerticalAlignment="Center" Background="#340D3E" CornerRadius="5" BorderThickness="1" BorderBrush="Black">
                     <UserControl x:Name="PopupUserControl"></UserControl>
                 </Border>
             </Grid>

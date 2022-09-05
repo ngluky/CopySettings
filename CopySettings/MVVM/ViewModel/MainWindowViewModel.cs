@@ -44,10 +44,8 @@ namespace CopySettings.MVVM.ViewModel
 
         public void SetGuiFile(string Path)
         {
-            SettingUserView settingUser = currView as SettingUserView;
-            settingUser.RenderGuiGENERAL(Path);
+            //SettingUserView settingUser = currView as SettingUserView;
+            //settingUser.RenderGuiGENERAL(Path);
         }
-
-
     }
 }

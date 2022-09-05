@@ -90,7 +90,7 @@ namespace CopySettings.MVVM.View.Popup
                 Win.Popup.Visibility = Visibility.Hidden;
                 Win.PopupUserControl.Content = null;
 
-                var viewsetting = Win.ViewSetting.Content as SettingUserView;
+                var viewsetting = Win.ViewSetting as SettingUserView;
 
                 var datacontext_ = viewsetting.DataContext as SettingUserViewModel;
                 datacontext_.SetData(data);
@@ -117,7 +117,7 @@ namespace CopySettings.MVVM.View.Popup
                 Win.Popup.Visibility = Visibility.Hidden;
                 Win.PopupUserControl.Content = null;
 
-                var viewsetting = Win.ViewSetting.Content as SettingUserView;
+                var viewsetting = Win.ViewSetting as SettingUserView;
 
                 var datacontext_ = viewsetting.DataContext as SettingUserViewModel;
                 datacontext_.SetData(data);

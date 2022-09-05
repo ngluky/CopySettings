@@ -10,5 +10,6 @@ namespace CopySettings.Obje.GuiObj
     public class Gui
     {
         [JsonPropertyName("general")] public Group[] general { get; set; }
+        [JsonPropertyName("control")] public Group[] control { get; set; }
     }
 }

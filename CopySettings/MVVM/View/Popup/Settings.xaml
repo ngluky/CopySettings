@@ -17,12 +17,12 @@
             </Button.Template>
         </Button>
 
-        <Grid Margin="15">
+        <Grid Margin="15,25,15,15">
             <StackPanel>
                 <Grid Height="30">
                     <TextBlock Text="File Gui" FontSize="15" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
-                    <TextBlock Text="" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="DarkGray" Margin="0,0,20,0"/>
+                    <TextBlock Text="" x:Name="FilePath" MaxWidth="119" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="DarkGray" Margin="0,0,30,0"/>
 
                     <Button Background="Transparent" BorderBrush="Transparent" Height="15" Width="15" Padding="0" HorizontalAlignment="Right" Click="opendFile">
                         <Button.Template>
@@ -35,6 +35,6 @@
                 </Grid>
             </StackPanel>
         </Grid>
-        
+
     </Grid>
 </UserControl>

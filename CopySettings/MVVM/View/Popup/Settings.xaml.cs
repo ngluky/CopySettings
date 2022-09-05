@@ -53,9 +53,13 @@ namespace CopySettings.MVVM.View.Popup
             openFileDialog.Filter = "json files (*.json)|*.json";
             if (openFileDialog.ShowDialog() == true)
             {
+                
                 if (openFileDialog.FileName == null) return;
                 MainWindow Win = GetWindow(SettingPopup) as MainWindow;
+                FilePath.Text = openFileDialog.FileName;
                 Win.SetGuiFile(openFileDialog.FileName);
+                Win.Popup.Visibility = Visibility.Hidden;
+                Win.PopupUserControl.Content = null;
             }
         }
     }

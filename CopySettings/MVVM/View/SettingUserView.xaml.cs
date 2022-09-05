@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Input;
 using System.Collections.Generic;
+using CopySettings.MVVM.ViewModel;
 
 namespace CopySettings.MVVM.View
 {
@@ -18,24 +19,25 @@ namespace CopySettings.MVVM.View
     public partial class SettingUserView : UserControl
     {
 
+
         public SettingUserView()
         {
             InitializeComponent();
-            this.KeyDown += SettingUserView_KeyDown;
-            this.MouseDown += SettingUserView_MouseDown;
+            //KeyDown += new KeyEventHandler(SettingUserView_KeyDown);
+            MouseDown += new MouseButtonEventHandler(SettingUserView_MouseDown);
             var task = RenderGuiGENERAL(@"Gui\Gui.json");
             task.Wait();
-        }
-
-        private void SettingUserView_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            //GetTextBoxFocused(e.)
+            //this.Loaded += SettingUserView_Loaded;
         }
 
         private void SettingUserView_KeyDown(object sender, KeyEventArgs e)
         {
-            //MessageBox.Show(e.Key.ToString());
             GetTextBoxFocused(e.Key.ToString());
+        }
+
+        private void SettingUserView_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            GetTextBoxFocused(e.ChangedButton.ToString());
         }
 
         public async Task RenderGuiGENERAL(string path)
@@ -43,11 +45,21 @@ namespace CopySettings.MVVM.View
             string alltext = File.ReadAllText(path);
             Gui data = JsonConvert.DeserializeObject<Gui>(alltext);
             //MessageBox.Show("ok");
+            if (data.general == null)
+            {
+                MessageBox.Show("Loading Gui Fail");
+                return;
+            }
             GENERAL.Children.Clear();
             foreach (var i in data.general)
             {
                 StackPanel stackPanel = await Render.RenderGroup(this,i).ConfigureAwait(false);
                 GENERAL.Children.Add(stackPanel);
+            }
+
+            foreach (var i in data.control)
+            {
+
             }
 
         }
@@ -90,6 +102,15 @@ namespace CopySettings.MVVM.View
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
 
+        }
+
+        private void SetProfiles(object sender, RoutedEventArgs e)
+        {
+            SettingUserViewModel datacontext = this.DataContext as SettingUserViewModel;
+            if (datacontext.data.actionMappings.ContainsKey("None"))
+            {
+                datacontext.KeyBind = datacontext.data.actionMappings["None"];
+            }
         }
     }
 }

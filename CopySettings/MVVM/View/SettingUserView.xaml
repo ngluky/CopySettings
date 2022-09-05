@@ -255,9 +255,9 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
 
-                        <Border Height="30" VerticalAlignment="Top" Margin="5" Background="#FF444444">
+                        <Button Height="30" VerticalAlignment="Top" Margin="5" Background="#FF444444" BorderBrush="Transparent" Click="SetProfiles">
                             <TextBlock Text="Default" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="15"/>
-                        </Border>
+                        </Button>
 
                         <Border Height="1" Margin="10,0,10,0" Background="LightGray" VerticalAlignment="Bottom"/>
                         <ScrollViewer Style="{StaticResource HideandShowScrollBars}" Grid.Row="1" HorizontalScrollBarVisibility="Hidden">
@@ -273,23 +273,29 @@
                             </ListView>
                         </ScrollViewer>
                     </Grid>
-
+                    
                     <ScrollViewer Grid.Column="1">
                         <StackPanel x:Name="CONTROL">
                             <StackPanel Margin="0,5,0,0" DataContext="{Binding data}">
                                 <TextBlock Text="MOUSE" />
                                 <Border Margin="30,0,0,0" HorizontalAlignment="Stretch" Height="45" DataContext="{Binding Path=actionMappings}">
                                     <Grid>
-                                        <TextBlock Text="Sensitivity: aim" VerticalAlignment="Center" />
+                                        <TextBlock Text="Sensitivity: aim" VerticalAlignment="Center" FontSize="17"/>
                                         <Grid HorizontalAlignment="Right" Margin="0,0,15,0" Height="35" VerticalAlignment="Center" Width="250">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition/>
                                                 <ColumnDefinition/>
                                             </Grid.ColumnDefinitions>
 
-                                            <TextBox Margin="3" Style="{StaticResource keybind}" BorderThickness="0" TextAlignment="Center" MaxLength="1" KeyDown="TextBox_KeyDown"/>
+                                            <TextBox Text="hello" Margin="3"
+                                                     TextAlignment="Center" Padding="10"
+                                                     Style="{StaticResource keybind}" MaxLength="1">
+                                            </TextBox>
 
-                                            <TextBox Grid.Column="1" Style="{StaticResource keybind}" Margin="3" BorderThickness="0" TextAlignment="Center" MaxLength="1" KeyDown="TextBox_KeyDown"/>
+                                            <TextBox Grid.Column="1"
+                                                     Style="{StaticResource keybind}"
+                                                     Margin="3" BorderThickness="0"
+                                                     TextAlignment="Center" MaxLength="1"/>
                                             
                                         </Grid>
                                         <Border Height="1" Background="DarkGray" VerticalAlignment="Bottom" Margin="10,0,30,0" />
@@ -298,7 +304,8 @@
                             </StackPanel>
                         </StackPanel>
                     </ScrollViewer>
-                    
+
+
                 </Grid>
             </TabItem>
             <TabItem Height="30" Padding="0" Header="Bool Setting"></TabItem>

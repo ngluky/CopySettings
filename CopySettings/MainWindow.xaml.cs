@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -31,6 +32,9 @@ namespace CopySettings
                 DowAth.Visibility = Visibility.Visible;
                 DowAthFun();
             }
+
+
+
             // remeber user
             init();
         }
@@ -77,6 +81,8 @@ namespace CopySettings
                             var datacontext = this.DataContext as MainWindowViewModel;
                             foreach (var i in data)
                             {
+                                var item = datacontext.Users.FirstOrDefault(x => x.DisplayName == i.DisplayName);
+                                if (item != null) return;
                                 datacontext.Users.Add(i);
                             }
                         });
@@ -188,5 +194,14 @@ namespace CopySettings
 
         #endregion
 
+        private void notho(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void SetKey(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show(e.ToString());
+        }
     }
 }

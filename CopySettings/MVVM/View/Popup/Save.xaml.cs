@@ -78,9 +78,14 @@ namespace CopySettings.MVVM.View.Popup
 
             MainWindow Win = GetWindow(ExportPopup) as MainWindow;
             var datacontext = Win.DataContext as MainWindowViewModel;
-            var viewsetting = Win.ViewSetting.Content as SettingUserView;
+            var viewsetting = Win.ViewSetting as SettingUserView;
             var datacontext_ = viewsetting.DataContext as SettingUserViewModel;
             var data = datacontext_.GetData();
+            if (data == null)
+            {
+                MessageBox.Show("Dont have Data");
+                return;
+            }
             Win.PopupUserControl.Content = null;
 
             if (data == null)
@@ -111,9 +116,14 @@ namespace CopySettings.MVVM.View.Popup
             MainWindow Win = GetWindow(ExportPopup) as MainWindow;
             var datacontext = Win.DataContext as MainWindowViewModel;
 
-            var viewsetting = Win.ViewSetting.Content as SettingUserView;
+            var viewsetting = Win.ViewSetting as SettingUserView;
             var datacontext_ = viewsetting.DataContext as SettingUserViewModel;
             var data = datacontext_.GetData();
+            if (data == null)
+            {
+                MessageBox.Show("Dont have Data");
+                return;
+            }
 
             Win.Popup.Visibility = Visibility.Hidden;
             Win.PopupUserControl.Content = null;

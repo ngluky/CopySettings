@@ -2,6 +2,7 @@
 using CopySettings.MVVM.ViewModel;
 using CopySettings.Obje;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows;
@@ -54,6 +55,16 @@ namespace CopySettings.MVVM.View.Popup
                 {
                     MainWindow Win = GetWindow(LoginPopup) as MainWindow;
                     MainWindowViewModel datacontext = Win.DataContext as MainWindowViewModel;
+                    var item = datacontext.Users.FirstOrDefault(x => x.DisplayName == user.DisplayName);
+                    if (item != null)
+                    {
+                        Win.Popup.Visibility = Visibility.Hidden;
+                        Win.PopupUserControl.Content = null;
+                        MessageBox.Show("Account have exit");
+                        err.Visibility = Visibility.Hidden;
+                        err.Height = 0;
+                        return;
+                    };
                     datacontext.Users.Add(user);
                     Win.Popup.Visibility = Visibility.Hidden;
                     Win.PopupUserControl.Content = null;
