@@ -3,8 +3,6 @@ using CopySettings.MVVM.ViewModel;
 using CopySettings.Obje;
 using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -47,7 +45,7 @@ namespace CopySettings.MVVM.View.Popup
         private async void LogIn(object sender, RoutedEventArgs e)
         {
             Loading.Visibility = Visibility.Visible;
-            Account? user = await AthLogin.LoginUserPass(User.Text, PasswordBox.Password , (bool)remember.IsChecked).ConfigureAwait(false);
+            Account? user = await AthLogin.LoginUserPass(User.Text, PasswordBox.Password, (bool)remember.IsChecked).ConfigureAwait(false);
 
             if (user != null)
             {
@@ -68,10 +66,11 @@ namespace CopySettings.MVVM.View.Popup
                     datacontext.Users.Add(user);
                     Win.Popup.Visibility = Visibility.Hidden;
                     Win.PopupUserControl.Content = null;
-                    MessageBox.Show("login Complex");
+                    //MessageBox.Show("login Complex");
+                    Constants.Log.Information("login Complex");
                     err.Visibility = Visibility.Hidden;
                     err.Height = 0;
-                    });
+                });
             }
             else
             {

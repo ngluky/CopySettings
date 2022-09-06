@@ -80,7 +80,7 @@ namespace CopySettings.MVVM.View.Popup {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CopySettings;component/mvvm/view/popup/import.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Setting Management;component/mvvm/view/popup/import.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\MVVM\View\Popup\Import.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

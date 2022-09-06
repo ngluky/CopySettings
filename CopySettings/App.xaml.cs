@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CopySettings.Hellp;
+using Serilog;
 using System.Windows;
 
 namespace CopySettings
@@ -13,5 +9,19 @@ namespace CopySettings
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            Constants.Log = new LoggerConfiguration().MinimumLevel.Debug()
+                .WriteTo.Async(a => a.File($"{System.AppDomain.CurrentDomain.BaseDirectory}\\logs\\log.txt", shared: true, rollingInterval: RollingInterval.Day))
+                .CreateLogger();
+
+            Constants.Log.Information("App start");
+
+            base.OnStartup(e);
+        }
     }
+
+
+
+
 }

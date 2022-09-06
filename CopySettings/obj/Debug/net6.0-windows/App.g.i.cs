@@ -59,7 +59,7 @@ namespace CopySettings {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/CopySettings;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Setting Management;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -1,12 +1,9 @@
-﻿using System;
-using RestSharp;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CopySettings.Obje;
-using System.Windows.Markup;
+﻿using CopySettings.Obje;
 using Newtonsoft.Json;
+using RestSharp;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 
 
@@ -16,17 +13,9 @@ namespace CopySettings.Hellp
 {
     public class ApiValorantCline
     {
-
-        public async Task<string> GetPlayerCard(Account user)
+        public static async Task<Data> GetPlayerSetting(Account u)
         {
-            var client = new RestClient($"https://pd.{user.Region}.a.pvp.net/store/v1/entitlements/{user.Ppuuid}/3f296c07-64c3-494c-923b-fe692a4fa1bd");
-            var request = new RestRequest();
-            request.AddHeader("X-Riot-Entitlements-JWT", user.EntitlementToken);
-            request.AddHeader("Authorization", $"Bearer {user.AccessToken}");
-
-            var r = await client.ExecuteGetAsync<ItemReq>(request).ConfigureAwait(false);
-            if (r.IsSuccessful)
-                return r.Data.Entitlements[0].ToString();
+            Data data_notFill = await FetchUserSettings(u).ConfigureAwait(false);
             return null;
         }
 
@@ -36,7 +25,7 @@ namespace CopySettings.Hellp
             FetchResponseData response;
 
             RestResponse resp = await DoCachedRequestAsync(Method.Get,
-                "https://playerpreferences.riotgames.com/playerPref/v3/getPreference/Ares.PlayerSettings", true , user);
+                "https://playerpreferences.riotgames.com/playerPref/v3/getPreference/Ares.PlayerSettings", true, user);
             if (!resp.IsSuccessful) return new Data();
             var responseData = JsonConvert.DeserializeObject<Dictionary<string, object>>(resp.Content);
             Data settings;
@@ -50,9 +39,20 @@ namespace CopySettings.Hellp
             }
             return settings;
         }
+        public async Task<string> GetPlayerCard(Account user)
+        {
+            var client = new RestClient($"https://pd.{user.Region}.a.pvp.net/store/v1/entitlements/{user.Ppuuid}/3f296c07-64c3-494c-923b-fe692a4fa1bd");
+            var request = new RestRequest();
+            request.AddHeader("X-Riot-Entitlements-JWT", user.EntitlementToken);
+            request.AddHeader("Authorization", $"Bearer {user.AccessToken}");
 
+            var r = await client.ExecuteGetAsync<ItemReq>(request).ConfigureAwait(false);
+            if (r.IsSuccessful)
+                return r.Data.Entitlements[0].ToString();
+            return null;
+        }
 
-        public static async Task<bool> putUserSettings(Account user , Data newData)
+        public static async Task<bool> putUserSettings(Account user, Data newData)
         {
             RestClient client = new RestClient(new RestClientOptions() { RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true });
             RestRequest request;
@@ -71,7 +71,7 @@ namespace CopySettings.Hellp
                 {
                     return false;
                 }
-                catch 
+                catch
                 {
 
                 }
@@ -82,7 +82,7 @@ namespace CopySettings.Hellp
             return false;
         }
 
-        public static async Task<RestResponse> DoCachedRequestAsync(Method method, string url, bool addRiotAuth,Account user)
+        public static async Task<RestResponse> DoCachedRequestAsync(Method method, string url, bool addRiotAuth, Account user)
         {
             var client = new RestClient(url);
             var request = new RestRequest();
@@ -103,8 +103,6 @@ namespace CopySettings.Hellp
             }
             return response;
         }
-
-
 
         public static async Task<string> GetNameAsunc(Guid puuid)
         {

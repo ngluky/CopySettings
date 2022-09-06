@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using CopySettings.Obje.GuiObj;
+using System;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows;
-using CopySettings.MVVM.View;
-using CopySettings.MVVM.ViewModel;
+using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
-using System.Resources;
-using System.Reflection.Metadata;
-using CopySettings.Obje.GuiObj;
 
 namespace CopySettings.Hellp
 {
@@ -104,7 +97,7 @@ namespace CopySettings.Hellp
             checkBox.Content = i.TextSwich;
             Binding binding_Ischeck = new Binding(i.path);
             checkBox.SetBinding(CheckBox.IsCheckedProperty, binding_Ischeck);
-            checkBox.Name = i.Name.Replace(' ', '_').Replace(":", String.Empty);
+            //checkBox.Name = i.Name.Replace(' ', '_').Replace(":", String.Empty);
             grid.Children.Add(checkBox);
             #endregion
 
@@ -166,7 +159,7 @@ namespace CopySettings.Hellp
             Binding binding_text = new Binding(i.path);
             binding_text.UpdateSourceTrigger = UpdateSourceTrigger.LostFocus;
             textBox.SetBinding(TextBox.TextProperty, binding_text);
-            textBox.Name = i.Name.Replace(' ', '_').Replace(":", String.Empty);
+            //textBox.Name = i.Name.Replace(' ', '_').Replace(":", String.Empty);
             textBox.Style = new Style();
             textBox.VerticalAlignment = VerticalAlignment.Center;
             textBox.HorizontalAlignment = HorizontalAlignment.Center;
@@ -253,7 +246,7 @@ namespace CopySettings.Hellp
             }
         }
 
-        private static async Task<Border> RenderItem(object sender , Item i)
+        private static async Task<Border> RenderItem(object sender, Item i)
         {
             if (i.Type == "Float")
             {

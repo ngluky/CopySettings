@@ -1,0 +1,122 @@
+2022-09-07 00:00:11.323 +07:00 [ERR] data default EAresBoolSettingName::PushToTalkEnabled not have
+2022-09-07 00:00:11.323 +07:00 [ERR] data default EAresBoolSettingName::HoldInputForSniperScopes not have
+2022-09-07 00:00:11.323 +07:00 [ERR] data default EAresBoolSettingName::ShowSpecatedPlayerCrosshair not have
+2022-09-07 00:00:11.323 +07:00 [ERR] data default EAresBoolSettingName::FadeCrosshairWithFiringError not have
+2022-09-07 00:00:11.323 +07:00 [ERR] data default EAresBoolSettingName::MuteMusicOnAppWindowDeactivate not have
+2022-09-07 00:00:11.323 +07:00 [ERR] data default EAresBoolSettingName::ShootingRangeBotArmorEnabled not have
+2022-09-07 00:00:11.323 +07:00 [ERR] data default EAresBoolSettingName::CrosshairInnerLinesShowShootingError not have
+2022-09-07 00:00:11.323 +07:00 [ERR] data default EAresBoolSettingName::CrosshairOuterLinesShowMovementError not have
+2022-09-07 00:00:11.323 +07:00 [ERR] data default EAresBoolSettingName::CrosshairOuterLinesShowShootingError not have
+2022-09-07 00:00:11.323 +07:00 [ERR] data default EAresBoolSettingName::CrosshairOuterLinesShowLines not have
+2022-09-07 00:00:11.323 +07:00 [ERR] data default EAresBoolSettingName::CollectionShowOwnedOnly not have
+2022-09-07 00:00:11.323 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOutlineOpacity
+2022-09-07 00:00:11.323 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesLineThickness
+2022-09-07 00:00:11.323 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesLineLength
+2022-09-07 00:00:11.323 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesLineOffset
+2022-09-07 00:00:11.323 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesOpacity
+2022-09-07 00:00:11.323 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesMovementErrorScale
+2022-09-07 00:00:11.323 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOuterLinesLineThickness
+2022-09-07 00:00:11.323 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOuterLinesLineOffset
+2022-09-07 00:00:11.323 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOuterLinesOpacity
+2022-09-07 00:00:11.323 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOuterLinesFiringErrorScale
+2022-09-07 00:00:11.323 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOuterLinesMovementErrorScale
+2022-09-07 00:01:30.488 +07:00 [INF] imput Complex
+2022-09-07 00:03:36.653 +07:00 [INF] imput Complex
+2022-09-07 00:06:13.769 +07:00 [INF] App start
+2022-09-07 00:06:29.966 +07:00 [ERR] login Fail 'response'
+2022-09-07 00:07:29.348 +07:00 [ERR] login Fail HTTPSConnectionPool(host='auth.riotgames.com', port=443): Max retries exceeded with url: /api/v1/authorization/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001844D3BCDC8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2022-09-07 00:07:46.187 +07:00 [INF] App start
+2022-09-07 00:09:50.910 +07:00 [INF] App start
+2022-09-07 00:09:52.055 +07:00 [ERR] Getcookie fail HTTPSConnectionPool(host='auth.riotgames.com', port=443): Max retries exceeded with url: /api/v1/authorization/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000180B9D38648>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2022-09-07 00:09:52.055 +07:00 [ERR] Getcookie fail HTTPSConnectionPool(host='auth.riotgames.com', port=443): Max retries exceeded with url: /api/v1/authorization/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000025C936D96C8>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2022-09-07 00:11:41.288 +07:00 [INF] App start
+2022-09-07 00:11:56.654 +07:00 [INF] imput Complex
+2022-09-07 00:16:39.911 +07:00 [INF] App start
+2022-09-07 00:16:50.778 +07:00 [ERR] data default EAresBoolSettingName::CrosshairHasOutline not have
+2022-09-07 00:16:50.778 +07:00 [ERR] data default EAresBoolSettingName::CrosshairInnerLinesShowShootingError not have
+2022-09-07 00:16:50.778 +07:00 [ERR] data default EAresBoolSettingName::CrosshairInnerLinesShowLines not have
+2022-09-07 00:16:50.778 +07:00 [ERR] data default EAresBoolSettingName::CrosshairOuterLinesShowMovementError not have
+2022-09-07 00:16:50.778 +07:00 [ERR] data default EAresBoolSettingName::CrosshairOuterLinesShowShootingError not have
+2022-09-07 00:16:50.779 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOutlineOpacity
+2022-09-07 00:16:50.779 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairCenterDotSize
+2022-09-07 00:16:50.779 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairCenterDotOpacity
+2022-09-07 00:16:50.779 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesLineLength
+2022-09-07 00:16:50.779 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesLineOffset
+2022-09-07 00:16:50.779 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesOpacity
+2022-09-07 00:16:50.779 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesFiringErrorScale
+2022-09-07 00:16:50.779 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesMovementErrorScale
+2022-09-07 00:16:50.779 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOuterLinesLineLength
+2022-09-07 00:16:50.779 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOuterLinesLineOffset
+2022-09-07 00:16:50.779 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOuterLinesOpacity
+2022-09-07 00:16:50.779 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairSniperCenterDotSize
+2022-09-07 00:16:50.779 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairSniperCenterDotOpacity
+2022-09-07 00:16:50.785 +07:00 [INF] imput Complex
+2022-09-07 00:17:01.516 +07:00 [ERR] data default EAresBoolSettingName::PushToTalkEnabled not have
+2022-09-07 00:17:01.516 +07:00 [ERR] data default EAresBoolSettingName::FadeCrosshairWithFiringError not have
+2022-09-07 00:17:01.516 +07:00 [ERR] data default EAresBoolSettingName::MuteMusicOnAppWindowDeactivate not have
+2022-09-07 00:17:01.516 +07:00 [ERR] data default EAresBoolSettingName::EnableHRTF not have
+2022-09-07 00:17:01.516 +07:00 [ERR] data default EAresBoolSettingName::ShootingRangeBotArmorEnabled not have
+2022-09-07 00:17:01.516 +07:00 [ERR] data default EAresBoolSettingName::AutoEquipPrioritizeStrongest not have
+2022-09-07 00:17:01.516 +07:00 [ERR] data default EAresBoolSettingName::AutoEquipSkipsMelee not have
+2022-09-07 00:17:01.516 +07:00 [ERR] data default EAresBoolSettingName::ToggleLiveDiagnostics not have
+2022-09-07 00:17:01.516 +07:00 [ERR] data default EAresBoolSettingName::CrosshairDisplayCenterDot not have
+2022-09-07 00:17:01.516 +07:00 [ERR] data default EAresBoolSettingName::CrosshairInnerLinesShowShootingError not have
+2022-09-07 00:17:01.516 +07:00 [ERR] data default EAresBoolSettingName::CrosshairInnerLinesShowLines not have
+2022-09-07 00:17:01.516 +07:00 [ERR] data default EAresBoolSettingName::CrosshairOuterLinesShowMovementError not have
+2022-09-07 00:17:01.516 +07:00 [ERR] data default EAresBoolSettingName::CrosshairOuterLinesShowShootingError not have
+2022-09-07 00:17:01.516 +07:00 [ERR] data default EAresBoolSettingName::CrosshairOuterLinesShowLines not have
+2022-09-07 00:17:01.516 +07:00 [ERR] data default EAresBoolSettingName::CollectionShowOwnedOnly not have
+2022-09-07 00:17:01.516 +07:00 [ERR] intSettings EAresIntSettingName::ColorBlindMode
+2022-09-07 00:17:01.516 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOutlineOpacity
+2022-09-07 00:17:01.516 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesLineLength
+2022-09-07 00:17:01.516 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesOpacity
+2022-09-07 00:17:01.516 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOuterLinesOpacity
+2022-09-07 00:17:01.516 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairSniperCenterDotSize
+2022-09-07 00:17:01.516 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairSniperCenterDotOpacity
+2022-09-07 00:17:01.522 +07:00 [INF] imput Complex
+2022-09-07 00:25:08.738 +07:00 [INF] App start
+2022-09-07 00:25:20.400 +07:00 [ERR] data default EAresBoolSettingName::PushToTalkEnabled not have
+2022-09-07 00:25:20.400 +07:00 [ERR] data default EAresBoolSettingName::HoldInputForSniperScopes not have
+2022-09-07 00:25:20.400 +07:00 [ERR] data default EAresBoolSettingName::ShowSpecatedPlayerCrosshair not have
+2022-09-07 00:25:20.400 +07:00 [ERR] data default EAresBoolSettingName::FadeCrosshairWithFiringError not have
+2022-09-07 00:25:20.400 +07:00 [ERR] data default EAresBoolSettingName::MuteMusicOnAppWindowDeactivate not have
+2022-09-07 00:25:20.400 +07:00 [ERR] data default EAresBoolSettingName::ShootingRangeBotArmorEnabled not have
+2022-09-07 00:25:20.400 +07:00 [ERR] data default EAresBoolSettingName::CrosshairInnerLinesShowShootingError not have
+2022-09-07 00:25:20.400 +07:00 [ERR] data default EAresBoolSettingName::CrosshairOuterLinesShowMovementError not have
+2022-09-07 00:25:20.400 +07:00 [ERR] data default EAresBoolSettingName::CrosshairOuterLinesShowShootingError not have
+2022-09-07 00:25:20.400 +07:00 [ERR] data default EAresBoolSettingName::CrosshairOuterLinesShowLines not have
+2022-09-07 00:25:20.400 +07:00 [ERR] data default EAresBoolSettingName::CollectionShowOwnedOnly not have
+2022-09-07 00:25:20.400 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOutlineOpacity
+2022-09-07 00:25:20.400 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesLineThickness
+2022-09-07 00:25:20.400 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesLineLength
+2022-09-07 00:25:20.400 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesLineOffset
+2022-09-07 00:25:20.400 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesOpacity
+2022-09-07 00:25:20.400 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesMovementErrorScale
+2022-09-07 00:25:20.400 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOuterLinesLineThickness
+2022-09-07 00:25:20.400 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOuterLinesLineOffset
+2022-09-07 00:25:20.400 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOuterLinesOpacity
+2022-09-07 00:25:20.400 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOuterLinesFiringErrorScale
+2022-09-07 00:25:20.400 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOuterLinesMovementErrorScale
+2022-09-07 00:25:20.407 +07:00 [INF] imput Complex
+2022-09-07 00:25:30.135 +07:00 [ERR] data default EAresBoolSettingName::PushToTalkEnabled not have
+2022-09-07 00:25:30.135 +07:00 [ERR] data default EAresBoolSettingName::FadeCrosshairWithFiringError not have
+2022-09-07 00:25:30.135 +07:00 [ERR] data default EAresBoolSettingName::MuteMusicOnAppWindowDeactivate not have
+2022-09-07 00:25:30.135 +07:00 [ERR] data default EAresBoolSettingName::EnableHRTF not have
+2022-09-07 00:25:30.135 +07:00 [ERR] data default EAresBoolSettingName::AutoEquipPrioritizeStrongest not have
+2022-09-07 00:25:30.135 +07:00 [ERR] data default EAresBoolSettingName::AutoEquipSkipsMelee not have
+2022-09-07 00:25:30.135 +07:00 [ERR] data default EAresBoolSettingName::CrosshairHasOutline not have
+2022-09-07 00:25:30.135 +07:00 [ERR] data default EAresBoolSettingName::CrosshairInnerLinesShowShootingError not have
+2022-09-07 00:25:30.135 +07:00 [ERR] data default EAresBoolSettingName::CrosshairInnerLinesAllowVertScaling not have
+2022-09-07 00:25:30.135 +07:00 [ERR] data default EAresBoolSettingName::CrosshairOuterLinesShowMovementError not have
+2022-09-07 00:25:30.135 +07:00 [ERR] data default EAresBoolSettingName::CrosshairOuterLinesShowShootingError not have
+2022-09-07 00:25:30.135 +07:00 [ERR] data default EAresBoolSettingName::CrosshairOuterLinesShowLines not have
+2022-09-07 00:25:30.135 +07:00 [ERR] data default EAresBoolSettingName::CollectionShowOwnedOnly not have
+2022-09-07 00:25:30.135 +07:00 [ERR] intSettings EAresIntSettingName::ColorBlindMode
+2022-09-07 00:25:30.135 +07:00 [ERR] intSettings EAresIntSettingName::PlayerPerfShowInputLatencyCpu
+2022-09-07 00:25:30.135 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairOutlineOpacity
+2022-09-07 00:25:30.135 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesLineLengthVertical
+2022-09-07 00:25:30.135 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesLineOffset
+2022-09-07 00:25:30.135 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairInnerLinesOpacity
+2022-09-07 00:25:30.135 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairSniperCenterDotSize
+2022-09-07 00:25:30.135 +07:00 [ERR] floatSettings EAresFloatSettingName::CrosshairSniperCenterDotOpacity
+2022-09-07 00:25:30.139 +07:00 [INF] imput Complex

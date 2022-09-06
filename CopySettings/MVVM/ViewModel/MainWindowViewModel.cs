@@ -1,22 +1,16 @@
 ﻿using CopySettings.Hellp;
-using CopySettings.MVVM.View;
 using CopySettings.Obje;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace CopySettings.MVVM.ViewModel
 {
-    public class MainWindowViewModel: BaseModel
+    public class MainWindowViewModel : BaseModel
     {
 
         #region data Bidding
         private bool _AccIsCheck = false;
-        public bool AccIsCheck { get=> _AccIsCheck; set { _AccIsCheck = value; OnPropertyChanged(); } }
+        public bool AccIsCheck { get => _AccIsCheck; set { _AccIsCheck = value; OnPropertyChanged(); } }
 
         private ObservableCollection<Account> _Users;
         public ObservableCollection<Account> Users { get => _Users; set { _Users = value; OnPropertyChanged(); } }
@@ -24,7 +18,7 @@ namespace CopySettings.MVVM.ViewModel
         private DataObj _data;
         public DataObj data { get => _data; set { _data = value; OnPropertyChanged(); } }
 
-        public List<Actionmapping> KeyBind { get; set; }
+        public List<KeyBind> KeyBind { get; set; }
 
         public void SetData(Data data_)
         {

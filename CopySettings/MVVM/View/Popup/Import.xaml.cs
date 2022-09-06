@@ -3,26 +3,12 @@ using CopySettings.MVVM.ViewModel;
 using CopySettings.Obje;
 using Microsoft.Win32;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.ComponentModel;
 using System.IO;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Markup;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CopySettings.MVVM.View.Popup
 {
@@ -31,7 +17,7 @@ namespace CopySettings.MVVM.View.Popup
     /// </summary>
     public partial class Import : UserControl, INotifyPropertyChanged
     {
-        
+
         public ObservableCollection<Account> AccS { get; set; }
         private bool can = true;
 
@@ -57,9 +43,8 @@ namespace CopySettings.MVVM.View.Popup
             MainWindow Win = GetWindow(ImportPopup) as MainWindow;
 
             Win.Popup.Visibility = Visibility.Hidden;
-            ;
             Win.PopupUserControl.Content = null;
-            
+
         }
 
         private FrameworkElement GetWindow(UserControl e)
@@ -83,6 +68,7 @@ namespace CopySettings.MVVM.View.Popup
             {
                 dataString = File.ReadAllText(openFileDialog.FileName);
                 var data = JsonConvert.DeserializeObject<Data>(dataString);
+                data = Utils.FillData(data);
                 MainWindow Win = GetWindow(ImportPopup) as MainWindow;
                 MainWindowViewModel datacontext = Win.DataContext as MainWindowViewModel;
                 datacontext.SetData(data);
@@ -90,7 +76,8 @@ namespace CopySettings.MVVM.View.Popup
                 Win.Popup.Visibility = Visibility.Hidden;
                 Win.PopupUserControl.Content = null;
 
-                MessageBox.Show("import Complex");
+                Constants.Log.Information("imput Complex");
+                //MessageBox.Show("import Complex");
 
             }
         }
@@ -103,6 +90,7 @@ namespace CopySettings.MVVM.View.Popup
             var user = gird.DataContext as Account; // get account
 
             var data = await ApiValorantCline.FetchUserSettings(user).ConfigureAwait(false);
+            data = Utils.FillData(data);
 
             this.Dispatcher.Invoke(() =>
             {
@@ -112,9 +100,13 @@ namespace CopySettings.MVVM.View.Popup
                 Win.Popup.Visibility = Visibility.Hidden;
                 Win.PopupUserControl.Content = null;
 
-                MessageBox.Show("import Complex");
-            });
+                Constants.Log.Information("imput Complex");
 
+            });
+        }
+
+        private async void DataFill()
+        {
 
         }
     }

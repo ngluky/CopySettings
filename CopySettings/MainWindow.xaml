@@ -248,7 +248,7 @@
         <Style TargetType="{x:Type TextBlock}">
             <Setter Property="Foreground" Value="White"/>
         </Style>
-        
+
         <!--list view Account are login-->
         <Style TargetType="ListViewItem" x:Key="listAcc">
             <Setter Property="Template">
@@ -258,7 +258,7 @@
 
                             <TextBlock FontSize="15" Foreground="White" 
                                         Text="{Binding DisplayName}"/>
-                       
+
                         </Grid>
                     </ControlTemplate>
 
@@ -365,7 +365,7 @@
             <!--popup-->
             <Grid Visibility="Hidden" x:Name="Popup">
                 <Border Background="#55000000" MouseDown="close_Popup"/>
-                <Border HorizontalAlignment="Center" MouseDown="notho" VerticalAlignment="Center" Background="#340D3E" CornerRadius="5" BorderThickness="1" BorderBrush="Black">
+                <Border HorizontalAlignment="Center" VerticalAlignment="Center" Background="#340D3E" CornerRadius="5" BorderThickness="1" BorderBrush="Black">
                     <UserControl x:Name="PopupUserControl"></UserControl>
                 </Border>
             </Grid>
@@ -404,7 +404,7 @@
                             <Setter Property="VerticalAlignment" Value="Center"/>
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
-                        
+
                     </StackPanel.Resources>
 
                     <!--button 1-->
@@ -529,13 +529,13 @@
 
         <Grid Grid.ColumnSpan="2" Background="#c7000000" x:Name="DowAth" Visibility="Hidden">
             <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" >
-                
+
                 <ProgressBar Minimum="0" Maximum="100" x:Name="Ps1"
                     >
-                
+
                 </ProgressBar>
                 <TextBlock Text="000%" x:Name="Ps" HorizontalAlignment="Center" Margin="0,30,0,0">
-                    
+
                 </TextBlock>
             </Grid>
         </Grid>

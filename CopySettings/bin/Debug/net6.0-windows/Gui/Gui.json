@@ -28,9 +28,9 @@
                     "textSwich": "ON|OFF"
                 },
                 {
-                    "name": "Invert Mouse",
+                    "name": "Beta Rawiput",
                     "type": "Bool",
-                    "path": "text",
+                    "path": "[RawInputBufferEnabled]",
                     "maximum": 0,
                     "minimum": 0,
                     "textSwich": "ON|OFF"
@@ -86,7 +86,22 @@
                     "path": "[MegamapCalloutVisibility]",
                     "maximum": 2,
                     "minimum": 0,
-                    "textSwich": "Never|Only In Buy|Always"
+                    "textSwich": "Always|Only In Buy|Never"
+                }
+            ]
+        }
+    ],
+    "control":[
+        {
+            "name": "",
+            "items": [
+                {
+                    "name": "DefaultToWalk",
+                    "type": "Bool",
+                    "path": "[DefaultToWalk]",
+                    "maximum": 0,
+                    "minimum": 0,
+                    "textSwich": "ON|OFF"
                 }
             ]
         }

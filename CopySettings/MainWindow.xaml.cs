@@ -4,13 +4,13 @@ using CopySettings.MVVM.ViewModel;
 using CopySettings.Obje;
 using CopySettings.Obje.GuiObj;
 using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -32,17 +32,13 @@ namespace CopySettings
             if (!File.Exists("./Ath/Ath.exe"))
             {
                 DowAth.Visibility = Visibility.Visible;
-                DowAthFun();
+                DowAthExe();
             }
-
-
-
-            // remeber user
             init();
         }
 
 
-        void DowAthFun()
+        void DowAthExe()
         {
             WebClient client = new WebClient();
             client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(client_DownloadProgressChanged);
@@ -50,7 +46,7 @@ namespace CopySettings
             Directory.CreateDirectory(@".\Ath\");
             Uri url = new Uri("https://raw.githubusercontent.com/ngluky/Ath/master/dist/Ath.exe");
             string pathfile = $@"{System.AppDomain.CurrentDomain.BaseDirectory}Ath\Ath.exe";
-            client.DownloadFileAsync(url , pathfile , null);
+            client.DownloadFileAsync(url, pathfile, null);
         }
 
         void client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
@@ -70,8 +66,9 @@ namespace CopySettings
 
         private async Task init()
         {
+            var datacontext = this.DataContext as MainWindowViewModel;
 
-            async Task getCookie()
+            async Task LoginWithCookie()
             {
                 List<Account> data = null;
                 for (int i = 0; i < 4; i++)
@@ -79,9 +76,9 @@ namespace CopySettings
                     try
                     {
                         data = await AthLogin.LoginCookie("./Ath/Cookie").ConfigureAwait(false);
+                        if (data == null) return;
                         this.Dispatcher.Invoke(() =>
                         {
-                            var datacontext = this.DataContext as MainWindowViewModel;
                             foreach (var i in data)
                             {
                                 var item = datacontext.Users.FirstOrDefault(x => x.DisplayName == i.DisplayName);
@@ -92,12 +89,28 @@ namespace CopySettings
 
                         return;
                     }
-                    catch { }
+                    catch
+                    {
+                        Constants.Log.Error($"try Cookie {i}");
+                    }
                 }
             }
 
-            await RenderGuiGENERAL(@"Gui\Gui.json");
-            await getCookie();
+            async Task GetSettingDefault()
+            {
+                RestClient client = new RestClient("https://raw.githubusercontent.com/ngluky/Valorant-Setting-Default/main/setting.json");
+                RestRequest restRequest = new RestRequest();
+                RestResponse response = await client.ExecuteGetAsync(restRequest).ConfigureAwait(false);
+                if (response.IsSuccessful)
+                {
+                    Constants.SettingDefault_string = response.Content;
+                    var data = JsonConvert.DeserializeObject<Data>(response.Content);
+                    datacontext.SetData(data);
+                    Constants.SettingDefault = data;
+                }
+            }
+
+            Task.WhenAll(GetSettingDefault(), RenderGuiGENERAL(@"Gui\Gui.json"), LoginWithCookie());
 
         }
 
@@ -123,33 +136,8 @@ namespace CopySettings
 
         public void SetGuiFile(string Path)
         {
-            MainWindowViewModel mainWindowViewModel = this.DataContext as MainWindowViewModel;
-            mainWindowViewModel.SetGuiFile(Path);
+            RenderGuiGENERAL(Path);
         }
-
-        #region not use
-
-        //private void Border_MouseEnter(object sender, MouseEventArgs e)
-        //{
-        //    Border? button = sender as Border;
-
-        //    if (button == null) return;
-        //    Grid grid = (Grid)button.Parent;
-        //    var chir = grid.Children[1];
-        //    chir.IsEnabled = true;
-        //}
-
-        //private void Border_MouseLeave(object sender, MouseEventArgs e)
-        //{
-        //    Border? button = sender as Border;
-
-        //    if (button == null) return;
-        //    Grid grid = (Grid)button.Parent;
-        //    var chir = grid.Children[1];
-        //    chir.IsEnabled = false;
-        //}
-
-        #endregion
 
         #region show popup
         private void ClickImport(object sender, RoutedEventArgs e)
@@ -196,12 +184,6 @@ namespace CopySettings
         }
 
         #endregion
-
-        private void notho(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
 
         private void SettingUserView_KeyDown(object sender, KeyEventArgs e)
         {
@@ -275,16 +257,12 @@ namespace CopySettings
 
         private void SetProfiles(object sender, RoutedEventArgs e)
         {
-            SettingUserViewModel datacontext = this.DataContext as SettingUserViewModel;
+            MainWindowViewModel datacontext = this.DataContext as MainWindowViewModel;
             if (datacontext.data.actionMappings.ContainsKey("None"))
             {
-                datacontext.KeyBind = datacontext.data.actionMappings["None"];
+                //datacontext.KeyBind = datacontext.data.actionMappings["None"];
             }
         }
 
-        private void test(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("");
-        }
     }
 }

@@ -1,9 +1,7 @@
 ﻿using CopySettings.Obje;
-using System;
+using Newtonsoft.Json;
+using Serilog.Core;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CopySettings.Hellp
 {
@@ -35,5 +33,16 @@ namespace CopySettings.Hellp
             {"Wraith","Omen"},
             {"Wushu","Jett"}
         };
+
+        public static string SettingDefault_string { get; set; }
+
+        public static Data SettingDefault { get; set; }
+
+        public static Data GetNewData()
+        {
+            return JsonConvert.DeserializeObject<Data>(SettingDefault_string);
+        }
+
+        public static Logger Log { get; set; }
     }
 }

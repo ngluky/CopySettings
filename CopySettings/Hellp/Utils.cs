@@ -2,11 +2,10 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.IO.Compression;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CopySettings.Hellp
 {
@@ -52,7 +51,6 @@ namespace CopySettings.Hellp
             }
             return Convert.ToBase64String(compressed);
         }
-
         public static DataObj ConvertDataToDirectory(Data data)
         {
             var dataOutput = new DataObj();
@@ -60,7 +58,7 @@ namespace CopySettings.Hellp
             dataOutput.actionMappings = new();
             foreach (var i in data.boolSettings)
             {
-                dataOutput.boolSettings.Add(i.settingEnum.Replace("EAresBoolSettingName::" , string.Empty), i.value);
+                dataOutput.boolSettings.Add(i.settingEnum.Replace("EAresBoolSettingName::", string.Empty), i.value);
             }
 
             foreach (var i in data.floatSettings)
@@ -82,14 +80,59 @@ namespace CopySettings.Hellp
             {
                 if (!dataOutput.actionMappings.ContainsKey(i.characterName))
                 {
-                    dataOutput.actionMappings.Add(i.characterName, new List<Actionmapping>());
-                    dataOutput.actionMappings[i.characterName].Add(i);
+
+                    dataOutput.actionMappings.Add(i.characterName, new Dictionary<string, KeyBind>());
+                    dataOutput.actionMappings[i.characterName].Add(i.name, new KeyBind());
+                    KeyBind key = dataOutput.actionMappings[i.characterName][i.name];
+                    if (i.bindIndex == 0)
+                    {
+                        key.KeyIndex1 = i.key;
+                        key.keyList.Add(i);
+                    }
+
+                    else
+                    {
+                        key.KeyIndex2 = i.key;
+                        key.keyList.Add(i);
+                    }
 
                 }
 
                 else
                 {
-                    dataOutput.actionMappings[i.characterName].Add(i);
+
+                    if (!dataOutput.actionMappings[i.characterName].ContainsKey(i.name))
+                    {
+                        dataOutput.actionMappings[i.characterName].Add(i.name, new KeyBind());
+                        KeyBind key = dataOutput.actionMappings[i.characterName][i.name];
+                        if (i.bindIndex == 0)
+                        {
+                            key.KeyIndex1 = i.key;
+                            key.keyList.Add(i);
+                        }
+
+                        else
+                        {
+                            key.KeyIndex2 = i.key;
+                            key.keyList.Add(i);
+                        }
+                    }
+                    else
+                    {
+                        KeyBind key = dataOutput.actionMappings[i.characterName][i.name];
+
+                        if (i.bindIndex == 0)
+                        {
+                            key.KeyIndex1 = i.key;
+                            key.keyList.Add(i);
+                        }
+
+                        else
+                        {
+                            key.KeyIndex2 = i.key;
+                            key.keyList.Add(i);
+                        }
+                    }
                 }
             }
 
@@ -100,7 +143,6 @@ namespace CopySettings.Hellp
 
             return dataOutput;
         }
-
         public static Data ConvertDirectorytoData(DataObj data)
         {
             var dataOutput = new Data();
@@ -135,7 +177,11 @@ namespace CopySettings.Hellp
             {
                 foreach (var j in i.Value)
                 {
-                    dataOutput.actionMappings.Add(j);
+                    foreach (var k in j.Value.keyList)
+                    {
+                        dataOutput.actionMappings.Add(k);
+
+                    }
                 }
             }
             //foreach (var i in data)
@@ -148,6 +194,82 @@ namespace CopySettings.Hellp
             return dataOutput;
 
         }
+        public static Data FillData(Data d)
+        {
+            Data NewData = new();
+            NewData = Constants.GetNewData();
 
+            foreach (var i in d.boolSettings)
+            {
+                var item = NewData.boolSettings.FirstOrDefault(x => x.settingEnum == i.settingEnum);
+                if (item != null) item.value = i.value;
+                else { Constants.Log.Error($"data default {i.settingEnum} not have"); }
+            }
+
+            foreach (var i in d.axisMappings)
+            {
+                var item = NewData.axisMappings.FirstOrDefault(x =>
+                (
+                    x.bindIndex == i.bindIndex &&
+                    x.name == i.name &&
+                    x.characterName == i.characterName &&
+                    x.scale == i.scale
+                ));
+                if (item == null)
+                {
+                    NewData.axisMappings.Add(i);
+                    continue;
+                }
+                else
+                {
+                    item.key = i.key;
+                    continue;
+
+                }
+
+                Constants.Log.Error($"axisMappings fail {i.characterName}");
+            }
+
+            foreach (var i in d.actionMappings)
+            {
+                var item = NewData.actionMappings.Find(x =>
+                (x.characterName == i.characterName && x.bindIndex == i.bindIndex && x.name == i.name));
+
+                if (item == null)
+                {
+                    NewData.actionMappings.Add(i);
+                }
+                else
+                {
+                    item.key = i.key;
+                    item.ctrl = i.ctrl;
+                    item.cmd = i.cmd;
+                    item.shift = i.shift;
+                    item.alt = i.alt;
+                }
+            }
+
+            foreach (var i in d.intSettings)
+            {
+
+                var item = NewData.intSettings.Find(x => (x.settingEnum == i.settingEnum));
+                if (item != null) item.value = i.value;
+                else Constants.Log.Error($"intSettings {i.settingEnum}");
+
+            }
+
+            foreach (var i in d.floatSettings)
+            {
+                var item = NewData.floatSettings.Find(x => (x.settingEnum == i.settingEnum));
+                if (item != null) item.value = i.value;
+                else Constants.Log.Error($"floatSettings {i.settingEnum}");
+            }
+
+            NewData.roamingSetttingsVersion = d.roamingSetttingsVersion;
+            NewData.stringSettings = d.stringSettings;
+
+            NewData.settingsProfiles = d.settingsProfiles;
+            return NewData;
+        }
     }
 }
