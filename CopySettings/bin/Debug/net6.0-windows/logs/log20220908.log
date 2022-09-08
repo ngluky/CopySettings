@@ -1,0 +1,360 @@
+2022-09-08 19:26:02.672 +07:00 [INF] App start
+2022-09-08 19:26:04.006 +07:00 [INF] set data complex:
+2022-09-08 19:27:47.981 +07:00 [INF] App start
+2022-09-08 19:27:48.944 +07:00 [INF] set data complex:
+2022-09-08 19:31:50.755 +07:00 [INF] App start
+2022-09-08 19:31:51.736 +07:00 [INF] set data complex:
+2022-09-08 19:32:31.577 +07:00 [INF] App start
+2022-09-08 19:32:32.518 +07:00 [INF] set data complex:
+2022-09-08 19:33:50.111 +07:00 [INF] App start
+2022-09-08 19:33:51.071 +07:00 [INF] set data complex:
+2022-09-08 19:36:47.369 +07:00 [INF] App start
+2022-09-08 19:36:48.355 +07:00 [INF] set data complex:
+2022-09-08 19:37:51.406 +07:00 [INF] App start
+2022-09-08 19:37:52.963 +07:00 [INF] set data complex:
+2022-09-08 19:39:16.719 +07:00 [INF] App start
+2022-09-08 19:39:17.988 +07:00 [INF] set data complex:
+2022-09-08 19:40:53.763 +07:00 [INF] App start
+2022-09-08 19:40:54.730 +07:00 [INF] set data complex:
+2022-09-08 19:41:44.916 +07:00 [INF] App start
+2022-09-08 19:41:45.899 +07:00 [INF] set data complex:
+2022-09-08 19:43:25.500 +07:00 [INF] App start
+2022-09-08 19:43:26.503 +07:00 [INF] set data complex:
+2022-09-08 20:21:20.660 +07:00 [INF] App start
+2022-09-08 20:21:21.983 +07:00 [INF] set data complex:
+2022-09-08 20:21:26.441 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSDisplayCenterDot not have , value True
+2022-09-08 20:21:26.441 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowShootingError not have , value False
+2022-09-08 20:21:26.441 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowLines not have , value False
+2022-09-08 20:21:26.441 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowMovementError not have , value False
+2022-09-08 20:21:26.441 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowShootingError not have , value False
+2022-09-08 20:21:26.441 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowLines not have , value False
+2022-09-08 20:21:26.445 +07:00 [ERR] data default EAresFloatSettingName::CrosshairOuterLinesLineThickness not have , value 1
+2022-09-08 20:21:26.445 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOutlineOpacity not have , value 1
+2022-09-08 20:21:26.445 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSCenterDotSize not have , value 1
+2022-09-08 20:21:26.445 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineLength not have , value 1
+2022-09-08 20:21:26.445 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineOffset not have , value 0
+2022-09-08 20:21:26.445 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesOpacity not have , value 1
+2022-09-08 20:21:26.445 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOuterLinesMovementErrorScale not have , value 1.9520695
+2022-09-08 20:21:26.445 +07:00 [ERR] data default EAresStringSettingName::LastSeenSeasonalPopup not have , value episode5act2
+2022-09-08 20:21:26.445 +07:00 [ERR] data default EAresStringSettingName::CrosshairColor not have , value (R=0,G=255,B=255,A=255)
+2022-09-08 20:21:26.445 +07:00 [ERR] data default EAresStringSettingName::CrosshairOutlineColor not have , value (R=255,G=255,B=255,A=255)
+2022-09-08 20:21:26.478 +07:00 [INF] set data complex:
+2022-09-08 20:21:26.486 +07:00 [INF] imput Complex
+2022-09-08 20:23:50.210 +07:00 [INF] App start
+2022-09-08 20:23:51.639 +07:00 [INF] set data complex:
+2022-09-08 20:24:00.930 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSDisplayCenterDot not have , value True
+2022-09-08 20:24:00.930 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowShootingError not have , value False
+2022-09-08 20:24:00.930 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowLines not have , value False
+2022-09-08 20:24:00.930 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowMovementError not have , value False
+2022-09-08 20:24:00.930 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowShootingError not have , value False
+2022-09-08 20:24:00.930 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowLines not have , value False
+2022-09-08 20:24:00.935 +07:00 [ERR] data default EAresFloatSettingName::CrosshairOuterLinesLineThickness not have , value 1
+2022-09-08 20:24:00.935 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOutlineOpacity not have , value 1
+2022-09-08 20:24:00.935 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSCenterDotSize not have , value 1
+2022-09-08 20:24:00.935 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineLength not have , value 1
+2022-09-08 20:24:00.935 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineOffset not have , value 0
+2022-09-08 20:24:00.935 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesOpacity not have , value 1
+2022-09-08 20:24:00.935 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOuterLinesMovementErrorScale not have , value 1.9520695
+2022-09-08 20:24:00.936 +07:00 [ERR] data default EAresStringSettingName::LastSeenSeasonalPopup not have , value episode5act2
+2022-09-08 20:24:00.936 +07:00 [ERR] data default EAresStringSettingName::CrosshairColor not have , value (R=0,G=255,B=255,A=255)
+2022-09-08 20:24:00.936 +07:00 [ERR] data default EAresStringSettingName::CrosshairOutlineColor not have , value (R=255,G=255,B=255,A=255)
+2022-09-08 20:24:00.970 +07:00 [INF] set data complex:
+2022-09-08 20:24:00.977 +07:00 [INF] imput Complex
+2022-09-08 20:35:44.476 +07:00 [INF] App start
+2022-09-08 20:35:45.838 +07:00 [INF] set data complex:
+2022-09-08 20:35:52.586 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSDisplayCenterDot not have , value True
+2022-09-08 20:35:52.586 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowShootingError not have , value False
+2022-09-08 20:35:52.586 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowLines not have , value False
+2022-09-08 20:35:52.586 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowMovementError not have , value False
+2022-09-08 20:35:52.586 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowShootingError not have , value False
+2022-09-08 20:35:52.586 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowLines not have , value False
+2022-09-08 20:35:52.589 +07:00 [ERR] data default EAresFloatSettingName::CrosshairOuterLinesLineThickness not have , value 1
+2022-09-08 20:35:52.589 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOutlineOpacity not have , value 1
+2022-09-08 20:35:52.589 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSCenterDotSize not have , value 1
+2022-09-08 20:35:52.589 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineLength not have , value 1
+2022-09-08 20:35:52.589 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineOffset not have , value 0
+2022-09-08 20:35:52.589 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesOpacity not have , value 1
+2022-09-08 20:35:52.589 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOuterLinesMovementErrorScale not have , value 1.9520695
+2022-09-08 20:35:52.589 +07:00 [ERR] data default EAresStringSettingName::LastSeenSeasonalPopup not have , value episode5act2
+2022-09-08 20:35:52.589 +07:00 [ERR] data default EAresStringSettingName::CrosshairColor not have , value (R=0,G=255,B=255,A=255)
+2022-09-08 20:35:52.589 +07:00 [ERR] data default EAresStringSettingName::CrosshairOutlineColor not have , value (R=255,G=255,B=255,A=255)
+2022-09-08 20:35:52.620 +07:00 [INF] set data complex:
+2022-09-08 20:35:52.626 +07:00 [INF] imput Complex
+2022-09-08 20:38:43.405 +07:00 [INF] App start
+2022-09-08 20:38:44.713 +07:00 [INF] set data complex:
+2022-09-08 20:38:49.333 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSDisplayCenterDot not have , value True
+2022-09-08 20:38:49.333 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowShootingError not have , value False
+2022-09-08 20:38:49.333 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowLines not have , value False
+2022-09-08 20:38:49.333 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowMovementError not have , value False
+2022-09-08 20:38:49.333 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowShootingError not have , value False
+2022-09-08 20:38:49.333 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowLines not have , value False
+2022-09-08 20:38:49.336 +07:00 [ERR] data default EAresFloatSettingName::CrosshairOuterLinesLineThickness not have , value 1
+2022-09-08 20:38:49.336 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOutlineOpacity not have , value 1
+2022-09-08 20:38:49.336 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSCenterDotSize not have , value 1
+2022-09-08 20:38:49.336 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineLength not have , value 1
+2022-09-08 20:38:49.336 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineOffset not have , value 0
+2022-09-08 20:38:49.336 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesOpacity not have , value 1
+2022-09-08 20:38:49.336 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOuterLinesMovementErrorScale not have , value 1.9520695
+2022-09-08 20:38:49.336 +07:00 [ERR] data default EAresStringSettingName::LastSeenSeasonalPopup not have , value episode5act2
+2022-09-08 20:38:49.336 +07:00 [ERR] data default EAresStringSettingName::CrosshairColor not have , value (R=0,G=255,B=255,A=255)
+2022-09-08 20:38:49.336 +07:00 [ERR] data default EAresStringSettingName::CrosshairOutlineColor not have , value (R=255,G=255,B=255,A=255)
+2022-09-08 20:38:49.367 +07:00 [INF] set data complex:
+2022-09-08 20:38:49.375 +07:00 [INF] imput Complex
+2022-09-08 20:44:31.305 +07:00 [INF] App start
+2022-09-08 20:44:32.597 +07:00 [INF] set data complex:
+2022-09-08 20:44:37.460 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSDisplayCenterDot not have , value True
+2022-09-08 20:44:37.460 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowShootingError not have , value False
+2022-09-08 20:44:37.460 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowLines not have , value False
+2022-09-08 20:44:37.460 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowMovementError not have , value False
+2022-09-08 20:44:37.460 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowShootingError not have , value False
+2022-09-08 20:44:37.460 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowLines not have , value False
+2022-09-08 20:44:37.464 +07:00 [ERR] data default EAresFloatSettingName::CrosshairOuterLinesLineThickness not have , value 1
+2022-09-08 20:44:37.465 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOutlineOpacity not have , value 1
+2022-09-08 20:44:37.465 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSCenterDotSize not have , value 1
+2022-09-08 20:44:37.465 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineLength not have , value 1
+2022-09-08 20:44:37.465 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineOffset not have , value 0
+2022-09-08 20:44:37.465 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesOpacity not have , value 1
+2022-09-08 20:44:37.465 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOuterLinesMovementErrorScale not have , value 1.9520695
+2022-09-08 20:44:37.465 +07:00 [ERR] data default EAresStringSettingName::LastSeenSeasonalPopup not have , value episode5act2
+2022-09-08 20:44:37.465 +07:00 [ERR] data default EAresStringSettingName::CrosshairColor not have , value (R=0,G=255,B=255,A=255)
+2022-09-08 20:44:37.465 +07:00 [ERR] data default EAresStringSettingName::CrosshairOutlineColor not have , value (R=255,G=255,B=255,A=255)
+2022-09-08 20:44:37.493 +07:00 [INF] set data complex:
+2022-09-08 20:44:37.499 +07:00 [INF] imput Complex
+2022-09-08 20:45:50.310 +07:00 [INF] App start
+2022-09-08 20:45:51.610 +07:00 [INF] set data complex:
+2022-09-08 20:45:56.877 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSDisplayCenterDot not have , value True
+2022-09-08 20:45:56.877 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowShootingError not have , value False
+2022-09-08 20:45:56.877 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowLines not have , value False
+2022-09-08 20:45:56.877 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowMovementError not have , value False
+2022-09-08 20:45:56.877 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowShootingError not have , value False
+2022-09-08 20:45:56.877 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowLines not have , value False
+2022-09-08 20:45:56.879 +07:00 [ERR] data default EAresFloatSettingName::CrosshairOuterLinesLineThickness not have , value 1
+2022-09-08 20:45:56.880 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOutlineOpacity not have , value 1
+2022-09-08 20:45:56.880 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSCenterDotSize not have , value 1
+2022-09-08 20:45:56.880 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineLength not have , value 1
+2022-09-08 20:45:56.880 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineOffset not have , value 0
+2022-09-08 20:45:56.880 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesOpacity not have , value 1
+2022-09-08 20:45:56.880 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOuterLinesMovementErrorScale not have , value 1.9520695
+2022-09-08 20:45:56.880 +07:00 [ERR] data default EAresStringSettingName::LastSeenSeasonalPopup not have , value episode5act2
+2022-09-08 20:45:56.880 +07:00 [ERR] data default EAresStringSettingName::CrosshairColor not have , value (R=0,G=255,B=255,A=255)
+2022-09-08 20:45:56.880 +07:00 [ERR] data default EAresStringSettingName::CrosshairOutlineColor not have , value (R=255,G=255,B=255,A=255)
+2022-09-08 20:45:56.909 +07:00 [INF] set data complex:
+2022-09-08 20:45:56.916 +07:00 [INF] imput Complex
+2022-09-08 20:46:37.170 +07:00 [INF] App start
+2022-09-08 20:46:38.388 +07:00 [INF] set data complex:
+2022-09-08 20:46:46.381 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSDisplayCenterDot not have , value True
+2022-09-08 20:46:46.381 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowShootingError not have , value False
+2022-09-08 20:46:46.381 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowLines not have , value False
+2022-09-08 20:46:46.381 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowMovementError not have , value False
+2022-09-08 20:46:46.381 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowShootingError not have , value False
+2022-09-08 20:46:46.381 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowLines not have , value False
+2022-09-08 20:46:46.384 +07:00 [ERR] data default EAresFloatSettingName::CrosshairOuterLinesLineThickness not have , value 1
+2022-09-08 20:46:46.385 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOutlineOpacity not have , value 1
+2022-09-08 20:46:46.385 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSCenterDotSize not have , value 1
+2022-09-08 20:46:46.385 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineLength not have , value 1
+2022-09-08 20:46:46.385 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineOffset not have , value 0
+2022-09-08 20:46:46.385 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesOpacity not have , value 1
+2022-09-08 20:46:46.385 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOuterLinesMovementErrorScale not have , value 1.9520695
+2022-09-08 20:46:46.385 +07:00 [ERR] data default EAresStringSettingName::LastSeenSeasonalPopup not have , value episode5act2
+2022-09-08 20:46:46.385 +07:00 [ERR] data default EAresStringSettingName::CrosshairColor not have , value (R=0,G=255,B=255,A=255)
+2022-09-08 20:46:46.385 +07:00 [ERR] data default EAresStringSettingName::CrosshairOutlineColor not have , value (R=255,G=255,B=255,A=255)
+2022-09-08 20:46:46.418 +07:00 [INF] set data complex:
+2022-09-08 20:46:46.424 +07:00 [INF] imput Complex
+2022-09-08 20:48:40.093 +07:00 [INF] App start
+2022-09-08 20:48:41.481 +07:00 [INF] set data complex:
+2022-09-08 20:48:55.509 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSDisplayCenterDot not have , value True
+2022-09-08 20:48:55.509 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowShootingError not have , value False
+2022-09-08 20:48:55.509 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowLines not have , value False
+2022-09-08 20:48:55.509 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowMovementError not have , value False
+2022-09-08 20:48:55.509 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowShootingError not have , value False
+2022-09-08 20:48:55.509 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowLines not have , value False
+2022-09-08 20:48:55.513 +07:00 [ERR] data default EAresFloatSettingName::CrosshairOuterLinesLineThickness not have , value 1
+2022-09-08 20:48:55.513 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOutlineOpacity not have , value 1
+2022-09-08 20:48:55.513 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSCenterDotSize not have , value 1
+2022-09-08 20:48:55.513 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineLength not have , value 1
+2022-09-08 20:48:55.513 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineOffset not have , value 0
+2022-09-08 20:48:55.513 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesOpacity not have , value 1
+2022-09-08 20:48:55.513 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOuterLinesMovementErrorScale not have , value 1.9520695
+2022-09-08 20:48:55.514 +07:00 [ERR] data default EAresStringSettingName::LastSeenSeasonalPopup not have , value episode5act2
+2022-09-08 20:48:55.514 +07:00 [ERR] data default EAresStringSettingName::CrosshairColor not have , value (R=0,G=255,B=255,A=255)
+2022-09-08 20:48:55.514 +07:00 [ERR] data default EAresStringSettingName::CrosshairOutlineColor not have , value (R=255,G=255,B=255,A=255)
+2022-09-08 20:48:55.542 +07:00 [INF] set data complex:
+2022-09-08 20:48:55.549 +07:00 [INF] imput Complex
+2022-09-08 20:51:38.253 +07:00 [INF] App start
+2022-09-08 20:51:39.577 +07:00 [INF] set data complex:
+2022-09-08 20:51:47.984 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSDisplayCenterDot not have , value True
+2022-09-08 20:51:47.984 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowShootingError not have , value False
+2022-09-08 20:51:47.984 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowLines not have , value False
+2022-09-08 20:51:47.984 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowMovementError not have , value False
+2022-09-08 20:51:47.984 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowShootingError not have , value False
+2022-09-08 20:51:47.984 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowLines not have , value False
+2022-09-08 20:51:47.987 +07:00 [ERR] data default EAresFloatSettingName::CrosshairOuterLinesLineThickness not have , value 1
+2022-09-08 20:51:47.987 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOutlineOpacity not have , value 1
+2022-09-08 20:51:47.987 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSCenterDotSize not have , value 1
+2022-09-08 20:51:47.987 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineLength not have , value 1
+2022-09-08 20:51:47.987 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineOffset not have , value 0
+2022-09-08 20:51:47.987 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesOpacity not have , value 1
+2022-09-08 20:51:47.987 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOuterLinesMovementErrorScale not have , value 1.9520695
+2022-09-08 20:51:47.987 +07:00 [ERR] data default EAresStringSettingName::LastSeenSeasonalPopup not have , value episode5act2
+2022-09-08 20:51:47.987 +07:00 [ERR] data default EAresStringSettingName::CrosshairColor not have , value (R=0,G=255,B=255,A=255)
+2022-09-08 20:51:47.987 +07:00 [ERR] data default EAresStringSettingName::CrosshairOutlineColor not have , value (R=255,G=255,B=255,A=255)
+2022-09-08 20:51:48.016 +07:00 [INF] set data complex:
+2022-09-08 20:51:48.023 +07:00 [INF] imput Complex
+2022-09-08 20:53:09.594 +07:00 [INF] App start
+2022-09-08 20:53:10.867 +07:00 [INF] set data complex:
+2022-09-08 20:53:19.541 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSDisplayCenterDot not have , value True
+2022-09-08 20:53:19.541 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowShootingError not have , value False
+2022-09-08 20:53:19.541 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowLines not have , value False
+2022-09-08 20:53:19.541 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowMovementError not have , value False
+2022-09-08 20:53:19.541 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowShootingError not have , value False
+2022-09-08 20:53:19.541 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowLines not have , value False
+2022-09-08 20:53:19.543 +07:00 [ERR] data default EAresFloatSettingName::CrosshairOuterLinesLineThickness not have , value 1
+2022-09-08 20:53:19.543 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOutlineOpacity not have , value 1
+2022-09-08 20:53:19.543 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSCenterDotSize not have , value 1
+2022-09-08 20:53:19.543 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineLength not have , value 1
+2022-09-08 20:53:19.543 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineOffset not have , value 0
+2022-09-08 20:53:19.543 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesOpacity not have , value 1
+2022-09-08 20:53:19.543 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOuterLinesMovementErrorScale not have , value 1.9520695
+2022-09-08 20:53:19.544 +07:00 [ERR] data default EAresStringSettingName::LastSeenSeasonalPopup not have , value episode5act2
+2022-09-08 20:53:19.544 +07:00 [ERR] data default EAresStringSettingName::CrosshairColor not have , value (R=0,G=255,B=255,A=255)
+2022-09-08 20:53:19.544 +07:00 [ERR] data default EAresStringSettingName::CrosshairOutlineColor not have , value (R=255,G=255,B=255,A=255)
+2022-09-08 20:53:19.575 +07:00 [INF] set data complex:
+2022-09-08 20:53:19.582 +07:00 [INF] imput Complex
+2022-09-08 20:54:51.483 +07:00 [INF] App start
+2022-09-08 20:54:52.771 +07:00 [INF] set data complex:
+2022-09-08 20:54:59.644 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSDisplayCenterDot not have , value True
+2022-09-08 20:54:59.644 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowShootingError not have , value False
+2022-09-08 20:54:59.644 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowLines not have , value False
+2022-09-08 20:54:59.644 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowMovementError not have , value False
+2022-09-08 20:54:59.644 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowShootingError not have , value False
+2022-09-08 20:54:59.644 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowLines not have , value False
+2022-09-08 20:54:59.646 +07:00 [ERR] data default EAresFloatSettingName::CrosshairOuterLinesLineThickness not have , value 1
+2022-09-08 20:54:59.646 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOutlineOpacity not have , value 1
+2022-09-08 20:54:59.646 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSCenterDotSize not have , value 1
+2022-09-08 20:54:59.646 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineLength not have , value 1
+2022-09-08 20:54:59.646 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineOffset not have , value 0
+2022-09-08 20:54:59.646 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesOpacity not have , value 1
+2022-09-08 20:54:59.646 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOuterLinesMovementErrorScale not have , value 1.9520695
+2022-09-08 20:54:59.647 +07:00 [ERR] data default EAresStringSettingName::LastSeenSeasonalPopup not have , value episode5act2
+2022-09-08 20:54:59.647 +07:00 [ERR] data default EAresStringSettingName::CrosshairColor not have , value (R=0,G=255,B=255,A=255)
+2022-09-08 20:54:59.647 +07:00 [ERR] data default EAresStringSettingName::CrosshairOutlineColor not have , value (R=255,G=255,B=255,A=255)
+2022-09-08 20:54:59.674 +07:00 [INF] set data complex:
+2022-09-08 20:54:59.680 +07:00 [INF] imput Complex
+2022-09-08 20:59:31.972 +07:00 [INF] App start
+2022-09-08 20:59:33.276 +07:00 [INF] set data complex:
+2022-09-08 20:59:37.856 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSDisplayCenterDot not have , value True
+2022-09-08 20:59:37.856 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowShootingError not have , value False
+2022-09-08 20:59:37.856 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowLines not have , value False
+2022-09-08 20:59:37.856 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowMovementError not have , value False
+2022-09-08 20:59:37.856 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowShootingError not have , value False
+2022-09-08 20:59:37.856 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowLines not have , value False
+2022-09-08 20:59:37.857 +07:00 [ERR] data default EAresFloatSettingName::CrosshairOuterLinesLineThickness not have , value 1
+2022-09-08 20:59:37.857 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOutlineOpacity not have , value 1
+2022-09-08 20:59:37.857 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSCenterDotSize not have , value 1
+2022-09-08 20:59:37.857 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineLength not have , value 1
+2022-09-08 20:59:37.857 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineOffset not have , value 0
+2022-09-08 20:59:37.857 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesOpacity not have , value 1
+2022-09-08 20:59:37.857 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOuterLinesMovementErrorScale not have , value 1.9520695
+2022-09-08 20:59:37.857 +07:00 [ERR] data default EAresStringSettingName::LastSeenSeasonalPopup not have , value episode5act2
+2022-09-08 20:59:37.857 +07:00 [ERR] data default EAresStringSettingName::CrosshairColor not have , value (R=0,G=255,B=255,A=255)
+2022-09-08 20:59:37.857 +07:00 [ERR] data default EAresStringSettingName::CrosshairOutlineColor not have , value (R=255,G=255,B=255,A=255)
+2022-09-08 20:59:37.887 +07:00 [INF] set data complex:
+2022-09-08 20:59:37.892 +07:00 [INF] imput Complex
+2022-09-08 21:02:10.110 +07:00 [INF] App start
+2022-09-08 21:03:23.135 +07:00 [INF] set data complex:
+2022-09-08 21:03:35.649 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSDisplayCenterDot not have , value True
+2022-09-08 21:04:45.712 +07:00 [INF] App start
+2022-09-08 21:04:58.551 +07:00 [INF] set data complex:
+2022-09-08 21:05:06.205 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSDisplayCenterDot not have , value True
+2022-09-08 21:05:06.205 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowShootingError not have , value False
+2022-09-08 21:05:06.205 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowLines not have , value False
+2022-09-08 21:05:06.205 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowMovementError not have , value False
+2022-09-08 21:05:06.205 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowShootingError not have , value False
+2022-09-08 21:05:06.205 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowLines not have , value False
+2022-09-08 21:06:19.195 +07:00 [ERR] data default EAresFloatSettingName::CrosshairOuterLinesLineThickness not have , value 1
+2022-09-08 21:06:19.195 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOutlineOpacity not have , value 1
+2022-09-08 21:06:19.195 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSCenterDotSize not have , value 1
+2022-09-08 21:06:19.195 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineLength not have , value 1
+2022-09-08 21:06:19.195 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineOffset not have , value 0
+2022-09-08 21:06:19.195 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesOpacity not have , value 1
+2022-09-08 21:06:19.195 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOuterLinesMovementErrorScale not have , value 1.9520695
+2022-09-08 21:06:19.195 +07:00 [ERR] data default EAresStringSettingName::LastSeenSeasonalPopup not have , value episode5act2
+2022-09-08 21:06:19.195 +07:00 [ERR] data default EAresStringSettingName::CrosshairColor not have , value (R=0,G=255,B=255,A=255)
+2022-09-08 21:06:19.195 +07:00 [ERR] data default EAresStringSettingName::CrosshairOutlineColor not have , value (R=255,G=255,B=255,A=255)
+2022-09-08 21:06:19.252 +07:00 [INF] set data complex:
+2022-09-08 21:06:19.264 +07:00 [INF] imput Complex
+2022-09-08 21:12:45.419 +07:00 [INF] App start
+2022-09-08 21:13:17.395 +07:00 [INF] App start
+2022-09-08 21:15:56.269 +07:00 [INF] App start
+2022-09-08 21:15:57.559 +07:00 [INF] set data complex:
+2022-09-08 21:31:17.544 +07:00 [INF] App start
+2022-09-08 21:32:24.880 +07:00 [INF] App start
+2022-09-08 21:35:16.130 +07:00 [INF] App start
+2022-09-08 21:44:31.959 +07:00 [INF] App start
+2022-09-08 21:46:44.275 +07:00 [INF] App start
+2022-09-08 21:46:45.589 +07:00 [INF] set data complex:
+2022-09-08 21:46:51.457 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSDisplayCenterDot not have , value True
+2022-09-08 21:46:51.457 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowShootingError not have , value False
+2022-09-08 21:46:51.457 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowLines not have , value False
+2022-09-08 21:46:51.457 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowMovementError not have , value False
+2022-09-08 21:46:51.457 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowShootingError not have , value False
+2022-09-08 21:46:51.457 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowLines not have , value False
+2022-09-08 21:46:51.458 +07:00 [ERR] data default EAresFloatSettingName::CrosshairOuterLinesLineThickness not have , value 1
+2022-09-08 21:46:51.458 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOutlineOpacity not have , value 1
+2022-09-08 21:46:51.458 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSCenterDotSize not have , value 1
+2022-09-08 21:46:51.458 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineLength not have , value 1
+2022-09-08 21:46:51.458 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineOffset not have , value 0
+2022-09-08 21:46:51.458 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesOpacity not have , value 1
+2022-09-08 21:46:51.458 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOuterLinesMovementErrorScale not have , value 1.9520695
+2022-09-08 21:46:51.458 +07:00 [ERR] data default EAresStringSettingName::LastSeenSeasonalPopup not have , value episode5act2
+2022-09-08 21:46:51.458 +07:00 [ERR] data default EAresStringSettingName::CrosshairColor not have , value (R=0,G=255,B=255,A=255)
+2022-09-08 21:46:51.458 +07:00 [ERR] data default EAresStringSettingName::CrosshairOutlineColor not have , value (R=255,G=255,B=255,A=255)
+2022-09-08 21:46:51.488 +07:00 [INF] set data complex:
+2022-09-08 21:46:51.494 +07:00 [INF] imput Complex
+2022-09-08 21:47:15.113 +07:00 [INF] App start
+2022-09-08 21:47:47.877 +07:00 [INF] App start
+2022-09-08 21:47:49.208 +07:00 [INF] set data complex:
+2022-09-08 21:52:13.545 +07:00 [INF] App start
+2022-09-08 21:52:52.706 +07:00 [INF] set data complex:
+2022-09-08 21:53:57.838 +07:00 [INF] App start
+2022-09-08 21:53:59.382 +07:00 [INF] set data complex:
+2022-09-08 21:54:10.619 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSDisplayCenterDot not have , value True
+2022-09-08 21:54:10.619 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowShootingError not have , value False
+2022-09-08 21:54:10.619 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowLines not have , value False
+2022-09-08 21:54:10.619 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowMovementError not have , value False
+2022-09-08 21:54:10.619 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowShootingError not have , value False
+2022-09-08 21:54:10.619 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowLines not have , value False
+2022-09-08 21:54:10.620 +07:00 [ERR] data default EAresFloatSettingName::CrosshairOuterLinesLineThickness not have , value 1
+2022-09-08 21:54:10.620 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOutlineOpacity not have , value 1
+2022-09-08 21:54:10.620 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSCenterDotSize not have , value 1
+2022-09-08 21:54:10.620 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineLength not have , value 1
+2022-09-08 21:54:10.620 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineOffset not have , value 0
+2022-09-08 21:54:10.620 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesOpacity not have , value 1
+2022-09-08 21:54:10.620 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOuterLinesMovementErrorScale not have , value 1.9520695
+2022-09-08 21:54:10.620 +07:00 [ERR] data default EAresStringSettingName::LastSeenSeasonalPopup not have , value episode5act2
+2022-09-08 21:54:10.620 +07:00 [ERR] data default EAresStringSettingName::CrosshairColor not have , value (R=0,G=255,B=255,A=255)
+2022-09-08 21:54:10.620 +07:00 [ERR] data default EAresStringSettingName::CrosshairOutlineColor not have , value (R=255,G=255,B=255,A=255)
+2022-09-08 21:54:10.653 +07:00 [INF] set data complex:
+2022-09-08 21:54:10.659 +07:00 [INF] imput Complex
+2022-09-08 21:58:45.772 +07:00 [INF] App start
+2022-09-08 21:58:47.096 +07:00 [INF] set data complex:
+2022-09-08 21:59:50.156 +07:00 [INF] App start
+2022-09-08 21:59:51.493 +07:00 [INF] set data complex:
+2022-09-08 22:00:04.469 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSDisplayCenterDot not have , value True
+2022-09-08 22:00:04.469 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowShootingError not have , value False
+2022-09-08 22:00:04.469 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSInnerLinesShowLines not have , value False
+2022-09-08 22:00:04.469 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowMovementError not have , value False
+2022-09-08 22:00:04.469 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowShootingError not have , value False
+2022-09-08 22:00:04.469 +07:00 [ERR] data default EAresBoolSettingName::CrosshairADSOuterLinesShowLines not have , value False
+2022-09-08 22:00:04.470 +07:00 [ERR] data default EAresFloatSettingName::CrosshairOuterLinesLineThickness not have , value 1
+2022-09-08 22:00:04.470 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOutlineOpacity not have , value 1
+2022-09-08 22:00:04.470 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSCenterDotSize not have , value 1
+2022-09-08 22:00:04.470 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineLength not have , value 1
+2022-09-08 22:00:04.470 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesLineOffset not have , value 0
+2022-09-08 22:00:04.470 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSInnerLinesOpacity not have , value 1
+2022-09-08 22:00:04.470 +07:00 [ERR] data default EAresFloatSettingName::CrosshairADSOuterLinesMovementErrorScale not have , value 1.9520695
+2022-09-08 22:00:04.470 +07:00 [ERR] data default EAresStringSettingName::LastSeenSeasonalPopup not have , value episode5act2
+2022-09-08 22:00:04.470 +07:00 [ERR] data default EAresStringSettingName::CrosshairColor not have , value (R=0,G=255,B=255,A=255)
+2022-09-08 22:00:04.470 +07:00 [ERR] data default EAresStringSettingName::CrosshairOutlineColor not have , value (R=255,G=255,B=255,A=255)
+2022-09-08 22:00:04.517 +07:00 [INF] set data complex:
+2022-09-08 22:00:04.524 +07:00 [INF] imput Complex

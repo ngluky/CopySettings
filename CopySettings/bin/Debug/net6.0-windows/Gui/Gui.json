@@ -93,15 +93,39 @@
     ],
     "control":[
         {
-            "name": "",
+            "name": "Ability",
             "items": [
                 {
-                    "name": "DefaultToWalk",
-                    "type": "Bool",
-                    "path": "[DefaultToWalk]",
+                    "name": "Ability 1",
+                    "type": "Keybind",
+                    "path": "[Activate_Ability1]",
                     "maximum": 0,
                     "minimum": 0,
-                    "textSwich": "ON|OFF"
+                    "textSwich": ""
+                },
+                {
+                    "name": "Ability 2",
+                    "type": "Keybind",
+                    "path": "[Activate_Ability2]",
+                    "maximum": 0,
+                    "minimum": 0,
+                    "textSwich": ""
+                },
+                {
+                    "name": "Ability 3",
+                    "type": "Keybind",
+                    "path": "[Activate_GrenadeAbility]",
+                    "maximum": 0,
+                    "minimum": 0,
+                    "textSwich": ""
+                },
+                {
+                    "name": "Activate Ultimate",
+                    "type": "Keybind",
+                    "path": "[Activate_Ultimate]",
+                    "maximum": 0,
+                    "minimum": 0,
+                    "textSwich": ""
                 }
             ]
         }

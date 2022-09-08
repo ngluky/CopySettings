@@ -35,6 +35,10 @@
                         </BeginStoryboard>
                     </Trigger.ExitActions>
                 </Trigger>
+
+                <Trigger Property="Opacity" Value="0">
+                    <Setter Property="Visibility" Value="Hidden"/>
+                </Trigger>
             </Style.Triggers>
         </Style>
 
@@ -311,26 +315,25 @@
                                 </Button>
 
                                 <Border Height="1" Margin="10,0,10,0" Background="LightGray" VerticalAlignment="Bottom"/>
-                                <ScrollViewer Style="{StaticResource HideandShowScrollBars}" Grid.Row="1" HorizontalScrollBarVisibility="Hidden">
-
-                                    <ListView  ItemsSource="{Binding Path=data.settingsProfiles}" Margin="0,5,0,0" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
-                                        <ListView.ItemTemplate>
-                                            <ItemContainerTemplate>
-                                                <Border Width="100">
-                                                    <TextBlock Text="{Binding Path=. , Converter={StaticResource AgentsNameCV}}" Foreground="White" HorizontalAlignment="Center" Name="textblock"></TextBlock>
-                                                </Border>
-                                            </ItemContainerTemplate>
-                                        </ListView.ItemTemplate>
-                                    </ListView>
-                                </ScrollViewer>
+                                <!--<ScrollViewer Style="{StaticResource HideandShowScrollBars}" Grid.Row="1" HorizontalScrollBarVisibility="Hidden">-->
+                                <ListView Grid.Row="1" SelectionChanged="ListView_SelectionChanged"  ItemsSource="{Binding Path=data.settingsProfiles}" Margin="0,5,0,0" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Hidden" >
+                                    <ListView.ItemTemplate>
+                                        <ItemContainerTemplate>
+                                            <Border Width="100">
+                                                <TextBlock Text="{Binding Path=. , Converter={StaticResource AgentsNameCV}}" Foreground="White" HorizontalAlignment="Center"></TextBlock>
+                                            </Border>
+                                        </ItemContainerTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                                <!--</ScrollViewer>-->
                             </Grid>
 
                             <ScrollViewer Grid.Column="1">
-                                <StackPanel x:Name="CONTROL">
-                                    <StackPanel Margin="0,5,0,0" DataContext="{Binding data}" MouseDown="SettingUserView_MouseDown">
+                                <StackPanel x:Name="CONTROL" DataContext="{Binding NameAgerSele}" MouseDown="SettingUserView_MouseDown">
+                                    <!--<StackPanel Margin="0,5,0,0">
                                         <TextBlock Text="MOUSE" />
-                                        <Border Margin="30,0,0,0" HorizontalAlignment="Stretch" Height="45" DataContext="{Binding Path=actionMappings}">
-                                            <Grid>
+                                        <Border Margin="30,0,0,0" HorizontalAlignment="Stretch" Height="45" DataContext="{Binding [Activate_Ability1]}">
+                                            <Grid MouseDown="Grid_MouseDown">
                                                 <TextBlock Text="Sensitivity: aim" VerticalAlignment="Center" FontSize="17"/>
                                                 <Grid HorizontalAlignment="Right" Margin="0,0,15,0" Height="35" VerticalAlignment="Center" Width="250">
                                                     <Grid.ColumnDefinitions>
@@ -338,21 +341,23 @@
                                                         <ColumnDefinition/>
                                                     </Grid.ColumnDefinitions>
 
-                                                    <TextBox Text="hello" Margin="3"
-                                                     TextAlignment="Center" Padding="10"
-                                                     Style="{StaticResource keybind}" MaxLength="1">
-                                                    </TextBox>
+                                                    <TextBox Text="{Binding KeyIndex1}" 
+                                                             Margin="3" x:Name="texkey"
+                                                             TextAlignment="Center" Padding="10"
+                                                             Style="{StaticResource keybind}" MaxLength="1"/>
+
 
                                                     <TextBox Grid.Column="1"
-                                                     Style="{StaticResource keybind}"
-                                                     Margin="3" BorderThickness="0"
-                                                     TextAlignment="Center" MaxLength="1"/>
+                                                             Text="{Binding KeyIndex2}"
+                                                             Style="{StaticResource keybind}"
+                                                             Margin="3" BorderThickness="0"
+                                                             TextAlignment="Center" MaxLength="1"/>
 
                                                 </Grid>
                                                 <Border Height="1" Background="DarkGray" VerticalAlignment="Bottom" Margin="10,0,30,0" />
                                             </Grid>
                                         </Border>
-                                    </StackPanel>
+                                    </StackPanel>-->
                                 </StackPanel>
                             </ScrollViewer>
 

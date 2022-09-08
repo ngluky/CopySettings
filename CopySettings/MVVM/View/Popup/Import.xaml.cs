@@ -68,7 +68,6 @@ namespace CopySettings.MVVM.View.Popup
             {
                 dataString = File.ReadAllText(openFileDialog.FileName);
                 var data = JsonConvert.DeserializeObject<Data>(dataString);
-                data = Utils.FillData(data);
                 MainWindow Win = GetWindow(ImportPopup) as MainWindow;
                 MainWindowViewModel datacontext = Win.DataContext as MainWindowViewModel;
                 datacontext.SetData(data);
@@ -90,7 +89,7 @@ namespace CopySettings.MVVM.View.Popup
             var user = gird.DataContext as Account; // get account
 
             var data = await ApiValorantCline.FetchUserSettings(user).ConfigureAwait(false);
-            data = Utils.FillData(data);
+            //data = Utils.FillData(data);
 
             this.Dispatcher.Invoke(() =>
             {

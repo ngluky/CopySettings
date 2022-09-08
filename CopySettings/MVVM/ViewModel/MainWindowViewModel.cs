@@ -18,12 +18,22 @@ namespace CopySettings.MVVM.ViewModel
         private DataObj _data;
         public DataObj data { get => _data; set { _data = value; OnPropertyChanged(); } }
 
-        public List<KeyBind> KeyBind { get; set; }
-
         public void SetData(Data data_)
         {
-            data = Utils.ConvertDataToDirectory(data_);
-            //MessageBox.Show("ok");
+            var dataObj = Utils.FillData(data_);
+            data = Utils.ConvertDataToDirectory(dataObj);
+
+            Constants.Log.Information($"set data complex:");
+        }
+
+        private Dictionary<string, KeyBind> _NameAgerSele;
+        public Dictionary<string, KeyBind> NameAgerSele
+        {
+            get => _NameAgerSele; set
+            {
+                _NameAgerSele = value;
+                OnPropertyChanged();
+            }
         }
 
         public Data GetData()

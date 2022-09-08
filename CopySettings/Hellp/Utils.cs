@@ -54,6 +54,7 @@ namespace CopySettings.Hellp
         public static DataObj ConvertDataToDirectory(Data data)
         {
             var dataOutput = new DataObj();
+            var settingdefaul = Constants.GetNewData();
             dataOutput.axisMappings = data.axisMappings;
             dataOutput.actionMappings = new();
             foreach (var i in data.boolSettings)
@@ -78,62 +79,20 @@ namespace CopySettings.Hellp
 
             foreach (var i in data.actionMappings)
             {
-                if (!dataOutput.actionMappings.ContainsKey(i.characterName))
+                var keys = dataOutput.actionMappings.Keys;
+                if (keys.Contains(i.characterName))
                 {
-
-                    dataOutput.actionMappings.Add(i.characterName, new Dictionary<string, KeyBind>());
-                    dataOutput.actionMappings[i.characterName].Add(i.name, new KeyBind());
-                    KeyBind key = dataOutput.actionMappings[i.characterName][i.name];
-                    if (i.bindIndex == 0)
-                    {
-                        key.KeyIndex1 = i.key;
-                        key.keyList.Add(i);
-                    }
-
-                    else
-                    {
-                        key.KeyIndex2 = i.key;
-                        key.keyList.Add(i);
-                    }
+                    var character = dataOutput.actionMappings[i.characterName];
+                    SetKeyFor(character, i);
 
                 }
-
                 else
                 {
-
-                    if (!dataOutput.actionMappings[i.characterName].ContainsKey(i.name))
-                    {
-                        dataOutput.actionMappings[i.characterName].Add(i.name, new KeyBind());
-                        KeyBind key = dataOutput.actionMappings[i.characterName][i.name];
-                        if (i.bindIndex == 0)
-                        {
-                            key.KeyIndex1 = i.key;
-                            key.keyList.Add(i);
-                        }
-
-                        else
-                        {
-                            key.KeyIndex2 = i.key;
-                            key.keyList.Add(i);
-                        }
-                    }
-                    else
-                    {
-                        KeyBind key = dataOutput.actionMappings[i.characterName][i.name];
-
-                        if (i.bindIndex == 0)
-                        {
-                            key.KeyIndex1 = i.key;
-                            key.keyList.Add(i);
-                        }
-
-                        else
-                        {
-                            key.KeyIndex2 = i.key;
-                            key.keyList.Add(i);
-                        }
-                    }
+                    dataOutput.actionMappings.Add(i.characterName, new Dictionary<string, KeyBind>());
+                    var character = dataOutput.actionMappings[i.characterName];
+                    SetKeyFor(character, i);
                 }
+
             }
 
             dataOutput.roamingSetttingsVersion = data.roamingSetttingsVersion;
@@ -142,7 +101,38 @@ namespace CopySettings.Hellp
 
 
             return dataOutput;
+
+            void SetKeyFor(Dictionary<string, KeyBind> i, Actionmapping actionmapping)
+            {
+                var keys = i.Keys;
+                string keyindex1 = "None", keyindex2 = "None";
+                var keydef = settingdefaul.actionMappings.FindAll(x => x.name == actionmapping.name);
+                if (keydef != null)
+                {
+                    keyindex1 = keydef.Find(x => x.bindIndex == 0).key;
+                }
+                if (keys.Contains(actionmapping.name))
+                {
+                    var key = i[actionmapping.name];
+                    key.KeyIndex1 = actionmapping.bindIndex == 0 ? actionmapping.key : keyindex1;
+                    key.KeyIndex2 = actionmapping.bindIndex == 1 ? actionmapping.key : keyindex2;
+                    key.keyList.Add(actionmapping);
+                }
+                else
+                {
+                    i.Add(actionmapping.name, new KeyBind()
+                    {
+                        KeyIndex1 = actionmapping.bindIndex == 0 ? actionmapping.key : keyindex1,
+                        KeyIndex2 = actionmapping.bindIndex == 1 ? actionmapping.key : keyindex2,
+                        Name = actionmapping.name,
+                        keyList = new List<Actionmapping>() { actionmapping }
+                    });
+                }
+
+            }
+
         }
+
         public static Data ConvertDirectorytoData(DataObj data)
         {
             var dataOutput = new Data();
@@ -203,7 +193,7 @@ namespace CopySettings.Hellp
             {
                 var item = NewData.boolSettings.FirstOrDefault(x => x.settingEnum == i.settingEnum);
                 if (item != null) item.value = i.value;
-                else { Constants.Log.Error($"data default {i.settingEnum} not have"); }
+                else { Constants.Log.Error($"data default {i.settingEnum} not have , value {i.value}"); }
             }
 
             foreach (var i in d.axisMappings)
@@ -227,7 +217,7 @@ namespace CopySettings.Hellp
 
                 }
 
-                Constants.Log.Error($"axisMappings fail {i.characterName}");
+                Constants.Log.Error($"data default {i.characterName} not have , value {i.key}");
             }
 
             foreach (var i in d.actionMappings)
@@ -254,7 +244,11 @@ namespace CopySettings.Hellp
 
                 var item = NewData.intSettings.Find(x => (x.settingEnum == i.settingEnum));
                 if (item != null) item.value = i.value;
-                else Constants.Log.Error($"intSettings {i.settingEnum}");
+                else
+                {
+                    NewData.intSettings.Add(i);
+                    Constants.Log.Error($"data default {i.settingEnum} not have , value {i.value}");
+                }
 
             }
 
@@ -262,11 +256,25 @@ namespace CopySettings.Hellp
             {
                 var item = NewData.floatSettings.Find(x => (x.settingEnum == i.settingEnum));
                 if (item != null) item.value = i.value;
-                else Constants.Log.Error($"floatSettings {i.settingEnum}");
+                else
+                {
+                    NewData.floatSettings.Add(i);
+                    Constants.Log.Error($"data default {i.settingEnum} not have , value {i.value}");
+                }
+            }
+
+            foreach (var i in d.stringSettings)
+            {
+                var item = NewData.stringSettings.Find(x => x.settingEnum == i.settingEnum);
+                if (item != null) item.value = i.value;
+                else
+                {
+                    NewData.stringSettings.Add(i);
+                    Constants.Log.Error($"data default {i.settingEnum} not have , value {i.value}");
+                }
             }
 
             NewData.roamingSetttingsVersion = d.roamingSetttingsVersion;
-            NewData.stringSettings = d.stringSettings;
 
             NewData.settingsProfiles = d.settingsProfiles;
             return NewData;

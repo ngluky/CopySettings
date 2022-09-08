@@ -4,7 +4,6 @@ using CopySettings.MVVM.ViewModel;
 using CopySettings.Obje;
 using CopySettings.Obje.GuiObj;
 using Newtonsoft.Json;
-using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,9 +33,16 @@ namespace CopySettings
                 DowAth.Visibility = Visibility.Visible;
                 DowAthExe();
             }
+            this.Loaded += MainWindow_Loaded;
             init();
         }
 
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            MainWindowViewModel datacontext = this.DataContext as MainWindowViewModel;
+            datacontext.SetData(Constants.GetNewData());
+            datacontext.NameAgerSele = datacontext.data.actionMappings["None"];
+        }
 
         void DowAthExe()
         {
@@ -96,21 +102,21 @@ namespace CopySettings
                 }
             }
 
-            async Task GetSettingDefault()
-            {
-                RestClient client = new RestClient("https://raw.githubusercontent.com/ngluky/Valorant-Setting-Default/main/setting.json");
-                RestRequest restRequest = new RestRequest();
-                RestResponse response = await client.ExecuteGetAsync(restRequest).ConfigureAwait(false);
-                if (response.IsSuccessful)
-                {
-                    Constants.SettingDefault_string = response.Content;
-                    var data = JsonConvert.DeserializeObject<Data>(response.Content);
-                    datacontext.SetData(data);
-                    Constants.SettingDefault = data;
-                }
-            }
+            //async Task GetSettingDefault()
+            //{
+            //    RestClient client = new RestClient("https://raw.githubusercontent.com/ngluky/Valorant-Setting-Default/main/setting.json");
+            //    RestRequest restRequest = new RestRequest();
+            //    RestResponse response = await client.ExecuteGetAsync(restRequest).ConfigureAwait(false);
+            //    if (response.IsSuccessful)
+            //    {
+            //        Constants.SettingDefault_string = response.Content;
+            //        var data = JsonConvert.DeserializeObject<Data>(response.Content);
+            //        datacontext.SetData(data);
+            //        Constants.SettingDefault = data;
+            //    }
+            //}
 
-            Task.WhenAll(GetSettingDefault(), RenderGuiGENERAL(@"Gui\Gui.json"), LoginWithCookie());
+            Task.WhenAll(/*GetSettingDefault(),*/ RenderGuiGENERAL(@"Gui\Gui.json"), LoginWithCookie());
 
         }
 
@@ -190,7 +196,7 @@ namespace CopySettings
             GetTextBoxFocused(e.Key.ToString());
         }
 
-        private void SettingUserView_MouseDown(object sender, MouseButtonEventArgs e)
+        public void SettingUserView_MouseDown(object sender, MouseButtonEventArgs e)
         {
             GetTextBoxFocused(e.ChangedButton.ToString());
         }
@@ -206,15 +212,17 @@ namespace CopySettings
                 return;
             }
             GENERAL.Children.Clear();
+            //CONTROL.Children.Clear();
             foreach (var i in data.general)
             {
-                StackPanel stackPanel = await Render.RenderGroup(this, i).ConfigureAwait(false);
+                StackPanel stackPanel = await Render.RenderGeneral(this, i).ConfigureAwait(false);
                 GENERAL.Children.Add(stackPanel);
             }
 
             foreach (var i in data.control)
             {
-
+                StackPanel stackPanel = await Render.RanderControl(this, i).ConfigureAwait(false);
+                CONTROL.Children.Add(stackPanel);
             }
 
         }
@@ -222,47 +230,55 @@ namespace CopySettings
         private void GetTextBoxFocused(string text)
         {
 
-            foreach (var i in CONTROL.Children)
-            {
-                StackPanel stackPanel = i as StackPanel;
-                foreach (var j in stackPanel.Children)
-                {
-                    if (j.GetType() == typeof(Border))
-                    {
-                        var textbox = GetTexts(j as Border);
-                        if (textbox == null) continue;
-                        textbox.Text = text;
-                    }
-                }
-            }
-
         }
 
-        private TextBox GetTexts(Border b)
+        private List<TextBox> GettextBoxInBorder(Border b)
         {
-            Grid grid = b.Child as Grid;
-            Grid grid1 = grid.Children[1] as Grid;
-            foreach (var i in grid1.Children)
-            {
-                TextBox textBox = i as TextBox;
-                if (textBox.IsFocused)
-                {
-                    return textBox;
-                }
-            }
-
-            return null;
+            var ListTextbox = new List<TextBox>();
+            return ListTextbox;
         }
-
 
         private void SetProfiles(object sender, RoutedEventArgs e)
         {
+            setag("None");
+        }
+
+        private void setag(string name)
+        {
             MainWindowViewModel datacontext = this.DataContext as MainWindowViewModel;
-            if (datacontext.data.actionMappings.ContainsKey("None"))
+            if (datacontext.data.actionMappings.ContainsKey(name))
             {
-                //datacontext.KeyBind = datacontext.data.actionMappings["None"];
+                datacontext.NameAgerSele = datacontext.data.actionMappings[name];
+
             }
         }
 
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            //foreach (var i in this.CONTROL.Children)
+            //{
+            //    MessageBox.Show("");
+
+            //}
+        }
+
+        //private void Sele_ag(object sender, MouseButtonEventArgs e)
+        //{
+        //    MessageBox.Show("");
+        //}
+
+        //private void selected(object sender, RoutedEventArgs e)
+        //{
+        //    MessageBox.Show("");
+
+        //}
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //MessageBox.Show(e.AddedItems[0].ToString());
+
+            setag(e.AddedItems[0].ToString());
+
+        }
     }
 }

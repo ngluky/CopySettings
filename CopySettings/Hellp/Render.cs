@@ -1,4 +1,5 @@
-﻿using CopySettings.Obje.GuiObj;
+﻿using CopySettings.MVVM.ViewModel;
+using CopySettings.Obje.GuiObj;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
@@ -10,7 +11,7 @@ namespace CopySettings.Hellp
 {
     public static class Render
     {
-        private static async Task<Border> IntSettingList(object sender, Item i)
+        private static async Task<Border> IntSettingList(Object sender, Item i)
         {
             var settinview = sender as MainWindow;
             Border border = new Border();
@@ -66,7 +67,7 @@ namespace CopySettings.Hellp
             return border;
         }
 
-        private static async Task<Border> BoolSetting(object sender, Item i)
+        private static async Task<Border> BoolSetting(Object sender, Item i)
         {
             var settinview = sender as MainWindow;
             Border border = new Border();
@@ -121,7 +122,7 @@ namespace CopySettings.Hellp
 
         }
 
-        private static async Task<Border> FloatSetting(object sender, Item i)
+        private static async Task<Border> FloatSetting(Object sender, Item i)
         {
             var settinview = sender as MainWindow;
             Border border = new Border();
@@ -193,6 +194,93 @@ namespace CopySettings.Hellp
 
         }
 
+        private static async Task<Border> KeyBindSetting(Object sender, Item i)
+        {
+
+            MainWindow settinview = sender as MainWindow;
+            MainWindowViewModel datacontext = settinview.DataContext as MainWindowViewModel;
+
+            Border border = new Border();
+            border.Margin = new Thickness(30, 0, 0, 0);
+            border.HorizontalAlignment = HorizontalAlignment.Stretch;
+            border.Height = 45;
+            Binding border_biding = new Binding(i.path);
+
+            border.SetBinding(Border.DataContextProperty, border_biding);
+            //border.MouseDown += Border_MouseDown;
+
+            Grid grid = new Grid();
+
+            TextBlock textBlock = new TextBlock();
+            textBlock.Text = i.Name;
+            textBlock.HorizontalAlignment = HorizontalAlignment.Left;
+            textBlock.VerticalAlignment = VerticalAlignment.Center;
+            textBlock.FontSize = 17;
+            textBlock.Width = 250;
+
+            grid.Children.Add(textBlock);
+
+            Grid grid1 = new Grid();
+            grid1.ColumnDefinitions.Add(new ColumnDefinition());
+            grid1.ColumnDefinitions.Add(new ColumnDefinition());
+            grid1.HorizontalAlignment = HorizontalAlignment.Right;
+            grid1.Margin = new Thickness(0, 0, 15, 0);
+            grid1.Height = 35;
+            grid1.VerticalAlignment = VerticalAlignment.Center;
+            grid1.Width = 250;
+
+
+            TextBox textBlock1 = new TextBox();
+            string path1 = "KeyIndex1";
+
+            Binding binding1 = new Binding(path1);
+            textBlock1.SetBinding(TextBox.TextProperty, binding1);
+            textBlock1.Margin = new Thickness(3, 3, 3, 3);
+            textBlock1.TextAlignment = TextAlignment.Center;
+            textBlock1.Padding = new Thickness(10);
+            textBlock1.Style = (Style)settinview.Resources["keybind"];
+            textBlock1.MaxLength = 1;
+            //textBlock1.SetValue(Grid.ColumnProperty, 0);
+
+            Grid.SetColumn(textBlock1, 0);
+            grid1.Children.Add(textBlock1);
+
+            TextBox textBlock2 = new TextBox();
+            string path2 = "KeyIndex2";
+            Binding binding2 = new Binding(path2);
+            textBlock2.SetBinding(TextBox.TextProperty, binding2);
+            textBlock2.Margin = new Thickness(3, 3, 3, 3);
+            textBlock2.TextAlignment = TextAlignment.Center;
+            textBlock2.Padding = new Thickness(10);
+            textBlock2.Style = (Style)settinview.Resources["keybind"];
+            textBlock2.MaxLength = 1;
+            //textBlock2.SetValue(Grid.ColumnProperty, 1);
+
+            Grid.SetColumn(textBlock2, 1);
+            grid1.Children.Add(textBlock2);
+
+            grid.Children.Add(grid1);
+
+            Border border1 = new Border();
+
+            border1.Height = 1;
+            border1.Background = new SolidColorBrush(Colors.DarkGray);
+            border1.VerticalAlignment = VerticalAlignment.Bottom;
+            border1.Margin = new Thickness(10, 0, 30, 0);
+
+            grid.Children.Add(border1);
+
+            border.Child = grid;
+
+            return border;
+        }
+
+        //private static void Border_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        //{
+        //    MessageBox.Show("");
+        //}
+        #region EventBiding
+
         private static void TexBlockChange(object sender, TextChangedEventArgs e)
         {
 
@@ -246,6 +334,9 @@ namespace CopySettings.Hellp
             }
         }
 
+
+        #endregion
+
         private static async Task<Border> RenderItem(object sender, Item i)
         {
             if (i.Type == "Float")
@@ -263,10 +354,15 @@ namespace CopySettings.Hellp
                 Border border = await IntSettingList(sender, i);
                 return border;
             }
+            else if (i.Type == "Keybind")
+            {
+                Border border = await KeyBindSetting(sender, i);
+                return border;
+            }
             return null;
         }
 
-        public static async Task<StackPanel> RenderGroup(Object sender, Group group)
+        public static async Task<StackPanel> RenderGeneral(Object sender, Group group)
         {
             if (group == null) return null;
             StackPanel stackPanel = new StackPanel();
@@ -285,6 +381,41 @@ namespace CopySettings.Hellp
             return stackPanel;
         }
 
+        public static async Task<StackPanel> RanderControl(Object sender, Group group)
+        {
 
+            StackPanel stackPanel = new();
+            MainWindow mainWindow = sender as MainWindow;
+            MainWindowViewModel datacontext = mainWindow.DataContext as MainWindowViewModel;
+
+            stackPanel.DataContext = datacontext.NameAgerSele;
+            stackPanel.MouseDown += mainWindow.SettingUserView_MouseDown;
+
+            Binding binding = new Binding(".");
+            stackPanel.SetBinding(StackPanel.DataContextProperty, binding);
+
+            //stackPanel.DataContext = datacontext.NameAgerSele;
+
+            TextBlock textBlock = new();
+            textBlock.Text = group.Name;
+            textBlock.FontSize = 17;
+            textBlock.Foreground = new SolidColorBrush(Colors.White);
+            stackPanel.Children.Add(textBlock);
+            stackPanel.Margin = new Thickness(0, 5, 0, 0);
+            //stackPanel.MouseDown += StackPanel_MouseDown;
+
+            foreach (var i in group.Items)
+            {
+                Border border = await RenderItem(sender, i).ConfigureAwait(false);
+                if (border != null)
+                    stackPanel.Children.Add(border);
+            }
+            return stackPanel;
+        }
+
+        //private static void StackPanel_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        //{
+        //    MessageBox.Show("");
+        //}
     }
 }

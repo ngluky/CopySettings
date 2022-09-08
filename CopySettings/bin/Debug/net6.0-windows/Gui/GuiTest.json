@@ -5,11 +5,103 @@
             "items": [
                 {
                     "name": "Sensitivity: aim",
-                    "type": "IntList",
-                    "path": "[MegamapCalloutVisibility]",
+                    "type": "Float",
+                    "path": "[MouseSensitivity]",
+                    "maximum": 10,
+                    "minimum": 0,
+                    "textSwich": ""
+                },
+                {
+                    "name": "Sensitivity: aim ADS",
+                    "type": "Float",
+                    "path": "[MouseSensitivityZoomed]",
+                    "maximum": 10,
+                    "minimum": 0,
+                    "textSwich": ""
+                },
+                {
+                    "name": "Invert Mouse",
+                    "type": "Bool",
+                    "path": "[MouseInverted]",
                     "maximum": 0,
                     "minimum": 0,
-                    "textSwich": "1|2|3"
+                    "textSwich": "ON|OFF"
+                },
+                {
+                    "name": "Beta Rawiput",
+                    "type": "Bool",
+                    "path": "[RawInputBufferEnabled]",
+                    "maximum": 0,
+                    "minimum": 0,
+                    "textSwich": "ON|OFF"
+                }
+            ]
+        },
+        {
+            "name": "Map",
+            "items": [
+                {
+                    "name": "Rotate",
+                    "type": "Bool",
+                    "path": "[MinimapRotates]",
+                    "maximum": 0,
+                    "minimum": 0,
+                    "textSwich": "Rotate|Fixed"
+                },
+                {
+                    "name": "Fixed",
+                    "type": "Bool",
+                    "path": "[MinimapFixedRotation]",
+                    "maximum": 0,
+                    "minimum": 0,
+                    "textSwich": "Always the Same|Base On Side"
+                },
+                {
+                    "name": "Kepp Player Center",
+                    "type": "Bool",
+                    "path": "[MinimapTranslates]",
+                    "maximum": 0,
+                    "minimum": 0,
+                    "textSwich": "ON|OFF"
+                },
+                {
+                    "name": "Minimap Size",
+                    "type": "Float",
+                    "path": "[MinimapSize]",
+                    "maximum": 1.2,
+                    "minimum": 0.8,
+                    "textSwich": ""
+                },
+                {
+                    "name": "Minimap Zoom",
+                    "type": "Float",
+                    "path": "[MinimapZoom]",
+                    "maximum": 1,
+                    "minimum": 0.5,
+                    "textSwich": ""
+                },
+                {
+                    "name": "Show Map Region Name",
+                    "type": "IntList",
+                    "path": "[MegamapCalloutVisibility]",
+                    "maximum": 2,
+                    "minimum": 0,
+                    "textSwich": "Always|Only In Buy|Never"
+                }
+            ]
+        }
+    ],
+    "control":[
+        {
+            "name": "",
+            "items": [
+                {
+                    "name": "Ability 1",
+                    "type": "Keybind",
+                    "path": "[Activate_Ability1]",
+                    "maximum": 0,
+                    "minimum": 0,
+                    "textSwich": ""
                 }
             ]
         }

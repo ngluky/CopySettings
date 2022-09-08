@@ -12,7 +12,7 @@ namespace CopySettings
         protected override void OnStartup(StartupEventArgs e)
         {
             Constants.Log = new LoggerConfiguration().MinimumLevel.Debug()
-                .WriteTo.Async(a => a.File($"{System.AppDomain.CurrentDomain.BaseDirectory}\\logs\\log.txt", shared: true, rollingInterval: RollingInterval.Day))
+                .WriteTo.Async(a => a.File($"{System.AppDomain.CurrentDomain.BaseDirectory}\\logs\\log.log", shared: true, rollingInterval: RollingInterval.Day))
                 .CreateLogger();
 
             Constants.Log.Information("App start");
