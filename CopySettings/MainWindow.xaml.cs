@@ -276,9 +276,12 @@ namespace CopySettings
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //MessageBox.Show(e.AddedItems[0].ToString());
+            try
+            {
+                setag(e.AddedItems[0].ToString());
 
-            setag(e.AddedItems[0].ToString());
-
+            }
+            catch { }
         }
     }
 }

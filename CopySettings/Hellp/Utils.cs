@@ -88,7 +88,7 @@ namespace CopySettings.Hellp
                 }
                 else
                 {
-                    dataOutput.actionMappings.Add(i.characterName, new Dictionary<string, KeyBind>());
+                    dataOutput.actionMappings.Add(i.characterName, Constants.GetNewActionMappings());
                     var character = dataOutput.actionMappings[i.characterName];
                     SetKeyFor(character, i);
                 }
@@ -105,7 +105,7 @@ namespace CopySettings.Hellp
             void SetKeyFor(Dictionary<string, KeyBind> i, Actionmapping actionmapping)
             {
                 var keys = i.Keys;
-                string keyindex1 = "None", keyindex2 = "None";
+                string keyindex1 = "", keyindex2 = "";
                 var keydef = settingdefaul.actionMappings.FindAll(x => x.name == actionmapping.name);
                 if (keydef != null)
                 {

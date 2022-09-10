@@ -49,6 +49,37 @@ namespace CopySettings.Hellp
             return JsonConvert.DeserializeObject<Data>(SettingDefault_string);
         }
 
+        public static Dictionary<string, KeyBind> GetNewActionMappings()
+        {
+            var data = GetNewData();
+            var dataout = new Dictionary<string, KeyBind>();
+
+            data.actionMappings.ForEach(x =>
+            {
+                KeyBind ty;
+                if (dataout.TryGetValue(x.name, out ty))
+                {
+                    ty.KeyIndex1 = x.bindIndex == 0 ? x.key : "";
+                    ty.KeyIndex2 = x.bindIndex == 1 ? x.key : "";
+                }
+                else
+                {
+                    dataout.Add(x.name, new KeyBind()
+                    {
+                        KeyIndex1 = x.bindIndex == 0 ? x.key : "",
+                        KeyIndex2 = x.bindIndex == 1 ? x.key : "",
+                        Name = x.name,
+                        keyList = new()
+                    }); ;
+
+                }
+            });
+
+            return dataout;
+
+        }
+
+
 
 
         public static Logger Log { get; set; }
